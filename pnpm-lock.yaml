@@ -20,9 +20,6 @@ dependencies:
   nuxt:
     specifier: ^3.11.2
     version: 3.11.2(@opentelemetry/api@1.8.0)(@unocss/reset@0.60.3)(floating-vue@5.2.2)(rollup@4.18.0)(sass@1.77.2)(unocss@0.60.3)(vite@5.2.11)
-  sass:
-    specifier: ^1.77.2
-    version: 1.77.2
   vue:
     specifier: ^3.4.27
     version: 3.4.27
@@ -34,6 +31,9 @@ devDependencies:
   '@nuxtjs/i18n':
     specifier: ^8.3.1
     version: 8.3.1(rollup@4.18.0)(vue@3.4.27)
+  sass:
+    specifier: ^1.77.2
+    version: 1.77.2
 
 packages:
 
@@ -4469,7 +4469,6 @@ packages:
 
   /immutable@4.3.6:
     resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==}
-    dev: false
 
   /imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
@@ -6912,7 +6911,6 @@ packages:
       chokidar: 3.6.0
       immutable: 4.3.6
       source-map-js: 1.2.0
-    dev: false
 
   /scroll-into-view-if-needed@2.2.31:
     resolution: {integrity: sha512-dGCXy99wZQivjmjIqihaBQNjryrz5rueJY7eHfTdyWEiR4ttYpsajb14rn9s5d4DY4EcY6+4+U/maARBXJedkA==}
