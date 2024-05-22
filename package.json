@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@ant-design-vue/nuxt": "^1.4.1",
+    "@nuxt/content": "^2.12.1",
+    "@pinia/nuxt": "^0.5.1",
     "ant-design-vue": "^4.2.1",
     "nuxt": "^3.11.2",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/i18n": "^8.3.1"
   }
 }
