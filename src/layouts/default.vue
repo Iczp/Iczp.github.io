@@ -1,15 +1,23 @@
 <script lang="ts" setup>
-import type { NuxtLink } from '#build/components';
+// import type { NuxtLink } from '#build/components';
+
 
 const { menus, selectedKeys } = useNavs();
 </script>
 
 <template>
-  <header class="app-layout-header">
-    <section class="header-right">
-      <div class="logo">
+
+
+    
+  <header class="app-header">
+    <section class="header-logo">
+      <div class="logo"></div>
+      <div class="logo-container">
         <h1 class="site-title">VVLL.net</h1>
-        <p class="site-description">Vite Vue Link Lab (链接实验室)</p>
+        <p class="site-description">
+          <strong>V</strong>ite <strong>V</strong>ue <strong>L</strong>ink
+          <strong>L</strong>ab (链接实验室)
+        </p>
       </div>
     </section>
     <nav class="nav">
@@ -17,17 +25,22 @@ const { menus, selectedKeys } = useNavs();
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/links">Links</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/notes">Notes</NuxtLink>
+        </li>
       </ul>
     </nav>
     <section class="header-right">
       <a>login</a>
     </section>
   </header>
-  <main>
-    <slot></slot>
-  </main>
+  <h1>app-main</h1>
+  <slot></slot>
 
-  <footer>
+  <footer class="app-footer">
     <a href="https://www.tasao.com" target="_blank">Tasao.com</a> ©2014-{{
       new Date().getFullYear()
     }}
@@ -35,8 +48,8 @@ const { menus, selectedKeys } = useNavs();
   </footer>
 </template>
 
-<style lang="scss" scoped>
-.app-layout-header {
+<style scoped>
+.app-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,7 +60,11 @@ const { menus, selectedKeys } = useNavs();
   border-radius: 12px;
   padding: 12px;
 }
-.logo {
+.app-main {
+  display: flex;
+  flex: 1;
+}
+.logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,5 +87,10 @@ const { menus, selectedKeys } = useNavs();
   color: #375749;
   padding: 0;
   margin: 0;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
 }
 </style>

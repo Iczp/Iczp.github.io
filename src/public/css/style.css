@@ -9,14 +9,21 @@ body {
   padding: 0;
 }
 body {
+  font-size: 14px;
   color: var(--app-color);
   background-color: var(--app-bg-color);
+  line-height: 150%;
+  /* font-size: 1em; */
 }
 a {
-  color: var(--app-a-color);
+  /* color: var(--app-a-color); */
+  color: aquamarine;
+  text-decoration: none;
 }
-
-
+a:hover {
+  color: rgb(5, 167, 113);
+  text-decoration: underline;
+}
 
 .ant-layout.app-layout-header {
   height: unset;
