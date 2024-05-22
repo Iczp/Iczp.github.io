@@ -3,10 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
   app: {
-    baseURL: '/',
+    baseURL: '.',
     buildAssetsDir: 'static',
   },
   experimental: {
     payloadExtraction: false, // 取消生成 _payload.js
   },
+  plugins: [{ src: '~/plugins/baidu-analytics', mode: 'client' }],
 });
