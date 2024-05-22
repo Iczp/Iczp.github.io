@@ -33,7 +33,7 @@ const onClick = (e: any) => {
   </a-tabs> -->
 </template>
 
-<style>
+<style lang="scss">
 .nav-tabs {
   font-size: 16px;
 }
