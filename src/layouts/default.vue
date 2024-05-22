@@ -1,72 +1,74 @@
 <script lang="ts" setup>
-// const { menus, selectedKeys } = useNavs();
+import type { NuxtLink } from '#build/components';
+
+const { menus, selectedKeys } = useNavs();
 </script>
 
 <template>
-  <!-- <main layout="default">
-    <AppHeader>
-      <NavBars></NavBars>
-    </AppHeader>
-    <slot />
-    <AppFooter>AppFooter</AppFooter>
-  </main> -->
-
-  <a-layout class="layout">
-    <a-layout-header>
-      <div class="logo" />
-
-      <!-- <a-menu
-        v-model:selectedKeys="selectedKeys"
-        theme="dark"
-        mode="horizontal"
-        :style="{ lineHeight: '64px' }"
-      >
-        <a-menu-item v-for="(item, index) in menus" :key="item.url"
-          ><NuxtLink :to="item.url">{{ item.title }}</NuxtLink></a-menu-item
-        >
-      </a-menu> -->
-    </a-layout-header>
-    <a-layout-content style="padding: 0 50px">
-      <a-breadcrumb style="margin: 16px 0">
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item>List</a-breadcrumb-item>
-        <a-breadcrumb-item>App</a-breadcrumb-item>
-
-        <a-breadcrumb-item>{{ $route.path }}</a-breadcrumb-item>
-      </a-breadcrumb>
-      <NavBars></NavBars>
-      <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
-        <slot>Content</slot>
+  <header class="app-layout-header">
+    <section class="header-right">
+      <div class="logo">
+        <h1 class="site-title">VVLL.net</h1>
+        <p class="site-description">Vite Vue Link Lab (链接实验室)</p>
       </div>
-    </a-layout-content>
-    <a-layout-footer style="text-align: center">
-      <a href="https://www.tasao.com" target="_blank">Tasao.com</a> ©2014-{{
-        new Date().getFullYear()
-      }}
-      Created by <a href="https://www.iczp.net" target="_blank">IczpNet</a>
-    </a-layout-footer>
-  </a-layout>
+    </section>
+    <nav class="nav">
+      <ul>
+        <li>
+          <NuxtLink to="/">Home</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+    <section class="header-right">
+      <a>login</a>
+    </section>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+
+  <footer>
+    <a href="https://www.tasao.com" target="_blank">Tasao.com</a> ©2014-{{
+      new Date().getFullYear()
+    }}
+    Created by <a href="https://www.iczp.net" target="_blank">IczpNet</a>
+  </footer>
 </template>
 
-<style scoped>
-.site-layout-content {
-  min-height: 280px;
-  padding: 24px;
-  background: #fff;
+<style lang="scss" scoped>
+.app-layout-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 20px;
+  border: 1px solid rgb(35, 42, 35);
+  margin: 20px;
+  border-radius: 12px;
+  padding: 12px;
 }
-#components-layout-demo-top .logo {
-  float: left;
-  width: 120px;
-  height: 31px;
-  margin: 16px 24px 16px 0;
-  background: rgba(255, 255, 255, 0.3);
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  color: greenyellow;
+  gap: 4px;
 }
-.ant-row-rtl #components-layout-demo-top .logo {
-  float: right;
-  margin: 16px 0 16px 24px;
+.site-title {
+  display: flex;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
-
-[data-theme='dark'] .site-layout-content {
-  background: #141414;
+.site-description {
+  display: flex;
+  font-size: 12px;
+  color: #375749;
+  padding: 0;
+  margin: 0;
 }
 </style>
