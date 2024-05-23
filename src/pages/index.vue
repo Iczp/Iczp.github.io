@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // import { useHead } from '#app';
 
 // const appConfig = useAppConfig();
@@ -28,6 +27,8 @@ const handleMessage = () => {
 
 <template>
   <main>
+    <h1>index</h1>
+
     <button @click="handleMessage">button {{ counter }}</button>
 
     <!-- <NuxtLink to="about">About</NuxtLink> -->

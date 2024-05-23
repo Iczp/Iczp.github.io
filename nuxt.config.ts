@@ -7,6 +7,15 @@ export default defineNuxtConfig({
     // strict: true,
   },
   srcDir: 'src/',
+  imports: {
+    autoImport: true,
+    presets: [
+      // {
+      //   from: 'vue-i18n',
+      //   imports: ['useI18n'],
+      // },
+    ],
+  },
   components: {
     /**
      * 要禁用自动导入的话，components.dirs设置为空数组

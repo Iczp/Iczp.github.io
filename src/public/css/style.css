@@ -22,7 +22,7 @@ a {
 }
 a:hover {
   color: rgb(5, 167, 113);
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .ant-layout.app-layout-header {
