@@ -50,6 +50,8 @@ const tabChange = (index: number) => {
   border-radius: 12px;
   padding: 12px;
   /* background-color: rgb(13, 8, 34); */
+  background-color: rgba(0, 0, 0, 0.565);
+  backdrop-filter: blur(8px);
 }
 .app-header::after {
   content: '';

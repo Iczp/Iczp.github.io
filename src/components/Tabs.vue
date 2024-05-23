@@ -35,6 +35,7 @@ const props = withDefaults(
   position: relative;
   padding: 0;
   margin: 0;
+  
 }
 
 .tabs a:hover {
