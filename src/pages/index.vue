@@ -33,7 +33,7 @@ const handleMessage = () => {
 
     <!-- <NuxtLink to="about">About</NuxtLink> -->
 
-    <nav></nav>
+    <nav>*****</nav>
 
     <section>
       <h3>index data:</h3>
