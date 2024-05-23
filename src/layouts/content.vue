@@ -3,7 +3,6 @@
 </script>
 
 <template>
-  <slot name="header"></slot>
   <main class="notes">
     <h1>
       <NuxtLink to="/">Home</NuxtLink>
@@ -17,5 +16,6 @@
 .notes {
   display: flex;
   flex-direction: column;
+  line-height: 200%;
 }
 </style>

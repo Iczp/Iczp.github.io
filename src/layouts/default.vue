@@ -1,10 +1,4 @@
-<script lang="ts" setup>
-const { menus, current } = useNavs();
-
-const tabChange = (index: number) => {
-  current.value = index;
-};
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <AppHeader />

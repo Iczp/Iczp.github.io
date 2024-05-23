@@ -29,8 +29,9 @@ const props = withDefaults(
 .tabs {
   display: flex;
   flex-direction: row;
+  // align-items: center;
   font-size: 16px;
-  gap: 8px;
+  gap: 12px;
   position: relative;
   padding: 0;
   margin: 0;
@@ -47,7 +48,7 @@ const props = withDefaults(
   position: relative;
   list-style: none;
   font-size: 16px;
-  padding: 12px 8px;
+  padding: 0 8px;
   cursor: pointer;
 }
 

@@ -21,7 +21,7 @@ const tabChange = (index: number) => {
         </p>
       </div>
     </section>
-    <nav class="nav">
+    <nav class="app-na">
       <Tabs :items="menus" :current="current" @change="tabChange">
         <template v-slot="{ item }">
           <!-- {{ item.title }} -->
@@ -39,7 +39,9 @@ const tabChange = (index: number) => {
 <style scoped>
 .app-header {
   display: flex;
+
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 20px;
@@ -47,7 +49,14 @@ const tabChange = (index: number) => {
   margin: 20px;
   border-radius: 12px;
   padding: 12px;
+  /* background-color: rgb(13, 8, 34); */
 }
+.app-header::after {
+  content: '';
+  position: absolute;
+  filter: blur(12px);
+}
+
 .app-main {
   display: flex;
   flex: 1;
