@@ -8,25 +8,43 @@ const props = withDefaults(
     current: 0,
   }
 );
+
+const emit = defineEmits<{
+  change: [number];
+  'update:current': [number];
+}>();
+
+const tabIndex = ref(props.current);
+const onChange = (index: number) => {
+  tabIndex.value = index;
+  emit('change', index);
+  emit('update:current', index);
+};
 </script>
 <template>
-  <ul class="tabs">
-    <li
-      v-for="(item, index) in props.items"
-      :key="index"
-      class="tab-item"
-      :class="{ active: index == props.current }"
-      @click="$emit('change', index)"
-    >
-      <slot :item="item">
-        {{ item }}
-      </slot>
-    </li>
-  </ul>
+  <div class="tabs">
+    <ul class="tab-ul">
+      <li
+        v-for="(item, index) in props.items"
+        :key="index"
+        class="tab-li"
+        :class="{ active: index == tabIndex }"
+        @click="onChange(index)"
+      >
+        <slot :item="item" name="item">
+          {{ item }}
+        </slot>
+      </li>
+    </ul>
+    <slot :index="tabIndex"></slot>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .tabs {
+  display: flex;
+}
+.tab-ul {
   display: flex;
   flex-direction: row;
   // align-items: center;
@@ -35,25 +53,24 @@ const props = withDefaults(
   position: relative;
   padding: 0;
   margin: 0;
-  
 }
 
-.tabs a:hover {
+.tab-ul a:hover {
   color: burlywood;
   text-decoration: none;
 }
 
-.tab-item {
+.tab-li {
   display: flex;
   justify-content: center;
   position: relative;
   list-style: none;
   font-size: 16px;
-  padding: 0 8px;
+  padding: 8px;
   cursor: pointer;
 }
 
-.tab-item::after {
+.tab-li::after {
   display: flex;
   content: '';
   background-color: aqua;
@@ -65,11 +82,11 @@ const props = withDefaults(
   width: 0;
   transition: width 0.3s linear;
 }
-.tab-item.active::after,
-.tab-item:hover::after {
+.tab-li.active::after,
+.tab-li:hover::after {
   width: 100%;
 }
-.tab-item:hover::after {
+.tab-li:hover::after {
   background-color: rgba(0, 255, 255, 0.545);
 }
 

@@ -66,8 +66,12 @@ export default defineNuxtConfig({
     '@ant-design-vue/nuxt',
     // 'nuxt-icon',
     '@nuxt/content',
+    // '@nuxtjs/tailwindcss',
   ],
   content: {
+    experimental: {
+      search: {},
+    },
     api: {
       baseURL: '/api/content',
     },

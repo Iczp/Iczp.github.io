@@ -21,12 +21,14 @@ const tabChange = (index: number) => {
         </p>
       </div>
     </section>
-    <nav class="app-na">
+    <nav class="app-nav">
       <Tabs :items="menus" :current="current" @change="tabChange">
-        <template v-slot="{ item }">
+        <template v-slot:item="{ item }" #item>
           <!-- {{ item.title }} -->
           <NuxtLink :to="item.url">{{ item.title }}</NuxtLink>
         </template>
+
+        <!-- <template v-slot="{ index }">{{ index }}</template> -->
       </Tabs>
     </nav>
     <section class="header-extra">
