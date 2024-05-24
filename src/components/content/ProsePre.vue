@@ -5,8 +5,8 @@
     <template #header>
       <div class="title-container">
         <div class="title-left">
-          <span class="tab-item language">{{ $attrs.language }}</span>
-          <span class="tab-item filename">{{ $attrs.filename }}</span>
+          <span class="tag-item language">{{ $attrs.language }}</span>
+          <span class="tag-item filename">{{ $attrs.filename }}</span>
         </div>
 
         <div class="title-right">
@@ -56,13 +56,15 @@
   flex-direction: row;
 }
 
-// .tab-item {
-//   display: flex;
-//   border: var(--card-border);
-//   padding: 0 8px;
-//   border-radius: 4px;
-//   background-color: rgb(23, 26, 39);
-// }
+.tag-item {
+  display: flex;
+  border: var(--card-border);
+  padding: 0 8px;
+  border-radius: 4px;
+  background-color: rgb(23, 26, 39);
+}
+
 .language {
+  font-weight: bold;
 }
 </style>

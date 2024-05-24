@@ -43,6 +43,7 @@ const onChange = (index: number) => {
 <style lang="scss" scoped>
 .tabs {
   display: flex;
+  flex-direction: column;
 }
 .tab-ul {
   display: flex;
@@ -63,6 +64,7 @@ const onChange = (index: number) => {
 .tab-li {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   list-style: none;
   font-size: 16px;
@@ -91,6 +93,6 @@ const onChange = (index: number) => {
 }
 
 .active {
-  color: red;
+  // color: red;
 }
 </style>
