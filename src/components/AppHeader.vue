@@ -9,16 +9,7 @@ const tabChange = (index: number) => {
 <template>
   <header class="app-header">
     <Logo />
-    <nav class="app-nav">
-      <Tabs :items="menus" :current="current" @change="tabChange">
-        <template v-slot:item="{ item }" #item>
-          <!-- {{ item.title }} -->
-          <NuxtLink :to="item.url">{{ item.title }}</NuxtLink>
-        </template>
-
-        <!-- <template v-slot="{ index }">{{ index }}</template> -->
-      </Tabs>
-    </nav>
+    <AppNav />
     <section class="header-extra">
       <a>login</a>
     </section>

@@ -10,7 +10,8 @@
         </div>
 
         <div class="title-right">
-          <Btn size="small" type="text">复制</Btn>
+          <!-- <Btn size="small" type="text">复制</Btn> -->
+          <Icon name="materialSymbols:contentCopyOutline" color="black" />
         </div>
       </div>
     </template>

@@ -17,6 +17,12 @@ export const useNavs = () => {
       url: '/notes',
       title: 'Notes',
     },
+
+    {
+      key: 'Icons',
+      url: 'https://icones.js.org/collection/material-symbols?s=copy',
+      title: 'Icons',
+    },
   ]);
 
   const current = ref(

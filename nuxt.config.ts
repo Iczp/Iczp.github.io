@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@ant-design-vue/nuxt',
-    // 'nuxt-icon',
+    'nuxt-icon',
     '@nuxt/content',
     // '@nuxtjs/tailwindcss',
   ],
@@ -101,5 +101,12 @@ export default defineNuxtConfig({
   },
   antd: {
     icons: [],
+  },
+  nuxtIcon: {
+    size: '24px', // default <Icon> size applied
+    class: 'icon', // default <Icon> class applied
+    aliases: {
+      nuxt: 'logos:nuxt-icon',
+    },
   },
 });
