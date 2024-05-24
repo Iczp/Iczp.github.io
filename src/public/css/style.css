@@ -3,9 +3,10 @@
 /* @import url('antd.min.css'); */
 
 :root {
-  --app-bg-color: black;
-  --app-a-color: red;
-  --app-color: aliceblue;
+  --app-color: rgb(185, 191, 197);
+  --app-a-color: rgb(123, 223, 171);
+  --app-a-hover-color: rgb(73, 236, 152);
+  --app-bg-color: rgb(10, 14, 11);
 }
 html,
 body {
@@ -16,16 +17,16 @@ body {
   font-size: 14px;
   color: var(--app-color);
   background-color: var(--app-bg-color);
-  line-height: 150%;
+  line-height: 1.5em;
   /* font-size: 1em; */
 }
 a {
   /* color: var(--app-a-color); */
-  color: aquamarine;
+  color: var(--app-a-color);
   text-decoration: none;
 }
 a:hover {
-  color: rgb(5, 167, 113);
+  color: var(--app-a-hover-color);
   /* text-decoration: underline; */
 }
 

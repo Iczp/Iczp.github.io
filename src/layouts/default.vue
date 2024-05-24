@@ -2,6 +2,7 @@
 
 <template>
   <AppHeader />
+  <div class="current-position">{{ $route.path }}</div>
   <slot></slot>
   <AppFooter />
 </template>

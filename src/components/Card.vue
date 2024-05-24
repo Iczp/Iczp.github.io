@@ -2,7 +2,7 @@
 
 <template>
   <div class="card">
-    <div class="card-header">
+    <div v-if="$slots.header" class="card-header">
       <slot name="header">
         <slot name="header-left"></slot>
         <slot name="header-right"></slot>
@@ -10,7 +10,7 @@
     </div>
     <slot></slot>
 
-    <div class="card-footer">
+    <div v-if="$slots.footer" class="card-footer">
       <slot name="footer">
         <slot name="footer-left"></slot>
         <slot name="footer-right"></slot>
@@ -24,8 +24,16 @@
   display: flex;
   flex-direction: column;
   border: var(--card-border);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .card-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: var(--card-border);
+}
+
+.card-footer {
   display: flex;
   flex-direction: row;
   border-bottom: var(--card-border);

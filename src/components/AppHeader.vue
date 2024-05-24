@@ -8,19 +8,7 @@ const tabChange = (index: number) => {
 
 <template>
   <header class="app-header">
-    <section class="header-logo">
-      <div class="logo"></div>
-      <div class="logo-container">
-        <h1 class="site-title">VVLL.net</h1>
-        <p class="site-description">
-          <span><strong>V</strong>ite</span>
-          <span> <strong>V</strong>ue</span>
-          <span><strong>L</strong>ink</span>
-          <span><strong>L</strong>ab</span>
-          <span> (链接实验室)</span>
-        </p>
-      </div>
-    </section>
+    <Logo />
     <nav class="app-nav">
       <Tabs :items="menus" :current="current" @change="tabChange">
         <template v-slot:item="{ item }" #item>
@@ -65,36 +53,6 @@ const tabChange = (index: number) => {
 .app-main {
   display: flex;
   flex: 1;
-}
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  font-size: 24px;
-  color: greenyellow;
-  gap: 4px;
-}
-.site-title {
-  display: flex;
-  font-size: 24px;
-  padding: 0;
-  margin: 0;
-}
-.site-description {
-  display: flex;
-  font-size: 12px;
-  color: #375749;
-  padding: 0;
-  margin: 0;
-  gap: 4px;
-}
-
-.app-footer {
-  display: flex;
-  justify-content: center;
 }
 
 .header-extra {

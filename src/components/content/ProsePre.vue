@@ -3,15 +3,21 @@
 <template>
   <Card class="prose-pre">
     <template #header>
-      <div class="pre-title">
-        <span class="tab-item language">{{ $attrs.language }}</span>
-        <span class="tab-item filename">{{ $attrs.filename }}</span>
+      <div class="title-container">
+        <div class="title-left">
+          <span class="tab-item language">{{ $attrs.language }}</span>
+          <span class="tab-item filename">{{ $attrs.filename }}</span>
+        </div>
+
+        <div class="title-right">
+          <Btn size="small" type="text">复制</Btn>
+        </div>
       </div>
     </template>
-    <pre>{{ $attrs }}</pre>
+    <!-- <pre>{{ $attrs }}</pre> -->
     <slot name="before" />
     <div class="code-content">
-      <pre :class="$attrs.class"><slot></slot></pre>
+      <pre><slot></slot></pre>
     </div>
     <slot name="after" />
   </Card>
@@ -25,15 +31,14 @@
   flex-direction: column;
   color: white;
   border-radius: 8px;
-  background-color: rgb(5, 9, 25);
 }
 .code-content {
   // display: flex;
-  color: #343a40;
-
-  padding: 10px;
+  color: #586878;
+  padding: 0 12px;
+  background-color: rgb(15, 15, 27);
 }
-.pre-title {
+.title-container {
   display: flex;
   flex-direction: row;
   padding: 8px;

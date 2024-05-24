@@ -19,7 +19,17 @@ export const useNavs = () => {
     },
   ]);
 
-  const current = ref(menus.value.findIndex((x) => x.url == route.path));
+  const current = ref(
+    menus.value
+      // .filter((x) => x.url != '/')
+      .findIndex((x) => x.url != '/' && route.path.startsWith(x.url))
+  );
+
+  if (current.value == -1) {
+    console.log('route.path', route.path);
+
+    current.value = 0;
+  }
 
   return {
     menus,
