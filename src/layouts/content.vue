@@ -17,5 +17,6 @@
   display: flex;
   flex-direction: column;
   line-height: 200%;
+  margin: 24px;
 }
 </style>

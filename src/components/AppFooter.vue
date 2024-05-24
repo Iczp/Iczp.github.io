@@ -13,5 +13,6 @@
 .app-footer {
   display: flex;
   justify-content: center;
+  padding: 12px 24px;
 }
 </style>
