@@ -41,16 +41,28 @@
 .title-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 8px;
   gap: 8px;
 }
-.tab-item {
+.title-left {
   display: flex;
-  border: var(--card-border);
-  padding: 0 8px;
-  border-radius: 4px;
-  background-color: rgb(23, 26, 39);
+  gap: 8px;
+  flex-direction: row;
 }
+.title-right {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+}
+
+// .tab-item {
+//   display: flex;
+//   border: var(--card-border);
+//   padding: 0 8px;
+//   border-radius: 4px;
+//   background-color: rgb(23, 26, 39);
+// }
 .language {
 }
 </style>

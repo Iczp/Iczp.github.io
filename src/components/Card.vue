@@ -8,7 +8,9 @@
         <slot name="header-right"></slot>
       </slot>
     </div>
-    <slot></slot>
+    <div class="card-body">
+      <slot></slot>
+    </div>
 
     <div v-if="$slots.footer" class="card-footer">
       <slot name="footer">
@@ -27,15 +29,21 @@
   overflow: hidden;
   box-sizing: border-box;
 }
-.card-header {
+.card-body {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.card-header,
+.card-footer {
+  display: block;
+}
+.card-header {
   border-bottom: var(--card-border);
 }
 
 .card-footer {
-  display: flex;
-  flex-direction: row;
-  border-bottom: var(--card-border);
+  border-top: var(--card-border);
 }
 </style>
