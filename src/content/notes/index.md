@@ -16,7 +16,7 @@ current: 1
 
 ---
 
-::tabs{:items='["Nuxt", "Vue", "React"]' :current="1"}
+::tab{:items='["Nuxt", "Vue", "React"]' :current="1"}
 content tab-content
 ::
 
@@ -46,6 +46,8 @@ export default () => {
 
 This will be rendered inside the `description` slot.
 
+```vue
+
 ::a-tabs{activeKey="1"}
   :::a-tab-pance{key="1"}
     往往
@@ -56,3 +58,4 @@ This will be rendered inside the `description` slot.
 我是按鈕
 ::
 
+```

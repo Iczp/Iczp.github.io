@@ -22,14 +22,14 @@ const onChange = (index: number) => {
 };
 </script>
 <template>
-  <Tabs
+  <Tab
     :items="props.items"
     :current="current"
     @change="onChange"
     class="tab-panels"
   >
     {{ $slots.default?.length }}
-  </Tabs>
+  </Tab>
 </template>
 
 <style lang="scss" scoped>

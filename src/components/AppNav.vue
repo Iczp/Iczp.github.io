@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const { menus, current } = useAppNav();
 
+import Tab from './Tab.vue';
+
 const tabChange = (index: number) => {
   current.value = index;
 };
@@ -16,7 +18,7 @@ const getTarget = (url: string) => {
 
 <template>
   <nav class="app-nav">
-    <Tabs :items="menus" :current="current" @change="tabChange">
+    <Tab :items="menus" :current="current" @change="tabChange">
       <template v-slot:item="{ item }" #item>
         <!-- {{ item.title }} -->
         <NuxtLink :to="item.url" :target="getTarget(item.url)">{{
@@ -25,7 +27,7 @@ const getTarget = (url: string) => {
       </template>
 
       <!-- <template v-slot="{ index }">{{ index }}</template> -->
-    </Tabs>
+    </Tab>
     <slot></slot>
   </nav>
 </template>
