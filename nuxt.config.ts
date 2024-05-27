@@ -102,11 +102,13 @@ export default defineNuxtConfig({
   antd: {
     icons: [],
   },
-  nuxtIcon: {
-    size: '24px', // default <Icon> size applied
-    class: 'icon', // default <Icon> class applied
-    aliases: {
-      nuxt: 'logos:nuxt-icon',
-    },
+  icon: {
+    appIcons: [
+      {
+        prefix: 'my-icon',
+        dir: './src/assets/app-icons',
+      },
+    ],
   },
+  
 });

@@ -10,8 +10,7 @@
         </div>
 
         <div class="title-right">
-          <!-- <Btn size="small" type="text">复制</Btn> -->
-          <Icon name="materialSymbols:contentCopyOutline" color="black" />
+          <IconsCopy />
         </div>
       </div>
     </template>
@@ -43,6 +42,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 8px;
   gap: 8px;
 }
