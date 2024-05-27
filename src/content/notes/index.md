@@ -46,7 +46,8 @@ export default () => {
 
 This will be rendered inside the `description` slot.
 
-```vue
+
+```ts
 
 ::a-tabs{activeKey="1"}
   :::a-tab-pance{key="1"}
@@ -59,3 +60,4 @@ This will be rendered inside the `description` slot.
 ::
 
 ```
+

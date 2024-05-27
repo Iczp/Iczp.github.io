@@ -4,6 +4,10 @@ const { menus, current } = useAppNav();
 const tabChange = (index: number) => {
   current.value = index;
 };
+
+const handleMessage = () => {
+  message.info('This is a normal message');
+};
 </script>
 
 <template>
@@ -14,13 +18,17 @@ const tabChange = (index: number) => {
       <a>login</a>
     </section>
   </header>
+  <main>
+    <a-button @click="handleMessage"> button </a-button>
 
-  <a-space direction="vertical" style="width: 100%">
-    <a-alert message="Success Text" type="success" />
-    <a-alert message="Info Text" type="info" />
-    <a-alert message="Warning Text" type="warning" />
-    <a-alert message="Error Text" type="error" />
-  </a-space>
+    <a-space direction="vertical" style="width: 100%">
+      <a-alert message="Success Text" type="success" />
+      <a-alert message="Info Text" type="info" />
+      <a-alert message="Warning Text" type="warning" />
+      <a-alert message="Error Text" type="error" />
+    </a-space>
+  </main>
+
   <slot></slot>
 </template>
 

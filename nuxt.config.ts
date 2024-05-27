@@ -128,10 +128,10 @@ export default defineNuxtConfig({
     // },
   },
   antd: {
-    components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
+    // components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
     imports: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
-    icons: [],
-    extractStyle: true,
+    // icons: [],
+    // extractStyle: true,
   },
   icon: {
     appIcons: [
