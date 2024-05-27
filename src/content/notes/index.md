@@ -46,4 +46,13 @@ export default () => {
 
 This will be rendered inside the `description` slot.
 
+::a-tabs{activeKey="1"}
+  :::a-tab-pance{key="1"}
+    往往
+  :::
+::
+
+::a-button{type="primary"}
+我是按鈕
+::
 

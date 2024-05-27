@@ -51,6 +51,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css: [
+    // 'ant-design-vue/dist/antd.css', // 引入 Ant Design 样式
+  ],
+
   experimental: {
     payloadExtraction: false, // 取消生成 _payload.js
   },
@@ -62,6 +66,7 @@ export default defineNuxtConfig({
   },
   plugins: [
     // { src: '~/plugins/baidu-analytics', mode: 'client' }
+    { src: '~/plugins/antd.ts', mode: 'client' },
   ],
   modules: [
     '@nuxtjs/i18n',
@@ -112,6 +117,8 @@ export default defineNuxtConfig({
     },
   },
   antd: {
+    components:['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
+    imports: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
     icons: [],
   },
   icon: {
