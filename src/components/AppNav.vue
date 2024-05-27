@@ -21,9 +21,9 @@ const getTarget = (url: string) => {
     <Tab :items="menus" :current="current" @change="tabChange">
       <template v-slot:item="{ item }" #item>
         <!-- {{ item.title }} -->
-        <NuxtLink :to="item.url" :target="getTarget(item.url)">{{
+        <a :href="item.url" :target="getTarget(item.url)">{{
           item.title
-        }}</NuxtLink>
+        }}</a>
       </template>
 
       <!-- <template v-slot="{ index }">{{ index }}</template> -->

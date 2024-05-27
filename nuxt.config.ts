@@ -1,4 +1,3 @@
-import type { ModuleOptions } from '@nuxt/content';
 import { generateCss } from './src/hooks/antd';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -69,7 +68,7 @@ export default defineNuxtConfig({
     { src: '~/plugins/antd.ts', mode: 'client' },
   ],
   modules: [
-    '@nuxtjs/i18n',
+    // '@nuxtjs/i18n',
     // '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@pinia/nuxt',
@@ -78,9 +77,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // '@nuxtjs/tailwindcss',
   ],
-  content: <Partial<ModuleOptions>>{
+  content: {
     experimental: {
-      clientDB: true,
+      clientDB: false,
       search: {},
     },
     api: {
@@ -109,12 +108,24 @@ export default defineNuxtConfig({
         // Theme used if `html.sepia`
         sepia: 'monokai',
       },
+      langs: [
+        'diff',
+        'bash',
+        'ts',
+        'js',
+        'json',
+        'css',
+        'html',
+        'json5',
+        'yaml',
+        'vue',
+      ],
     },
-    markdown: {
-      toc: {
-        includeLevel: [2, 3],
-      },
-    },
+    // markdown: {
+    //   toc: {
+    //     includeLevel: [2, 3],
+    //   },
+    // },
   },
   antd: {
     components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
@@ -131,3 +142,4 @@ export default defineNuxtConfig({
     ],
   },
 });
+
