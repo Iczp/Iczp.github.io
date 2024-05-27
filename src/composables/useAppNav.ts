@@ -1,4 +1,4 @@
-export const useNavs = () => {
+export const useAppNav = () => {
   const route = useRoute();
 
   const menus = ref([
@@ -20,7 +20,7 @@ export const useNavs = () => {
 
     {
       key: 'Icons',
-      url: 'https://icones.js.org/collection/material-symbols?s=copy',
+      url: 'https://icones.js.org/collection/ic',
       title: 'Icons',
     },
   ]);

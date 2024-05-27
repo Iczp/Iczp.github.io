@@ -1,3 +1,4 @@
+import type { ModuleOptions } from '@nuxt/content';
 import { generateCss } from './src/hooks/antd';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -32,9 +33,13 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [
+        {
+          rel: 'stylesheet',
+          href: '/css/antd.min.css', // 引用生成的静态样式文件
+        },
         // {
         //   rel: 'stylesheet',
-        //   href: '/css/antd.min.css', // 引用生成的静态样式文件
+        //   href: '/css/scroller.css', // 引用生成的静态样式文件
         // },
         {
           rel: 'stylesheet',
@@ -68,13 +73,15 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // '@nuxtjs/tailwindcss',
   ],
-  content: {
+  content: <Partial<ModuleOptions>>{
     experimental: {
+      clientDB: true,
       search: {},
     },
     api: {
       baseURL: '/api/content',
     },
+
     // documentDriven: true,
     // sources: {
     //   content: {
@@ -98,6 +105,11 @@ export default defineNuxtConfig({
         sepia: 'monokai',
       },
     },
+    markdown: {
+      toc: {
+        includeLevel: [2, 3],
+      },
+    },
   },
   antd: {
     icons: [],
@@ -110,5 +122,4 @@ export default defineNuxtConfig({
       },
     ],
   },
-  
 });

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { menus, current } = useNavs();
+const { menus, current } = useAppNav();
 
 const tabChange = (index: number) => {
   current.value = index;
