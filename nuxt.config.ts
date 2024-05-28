@@ -68,7 +68,7 @@ export default defineNuxtConfig({
     { src: '~/plugins/antd.ts', mode: 'client' },
   ],
   modules: [
-    // '@nuxtjs/i18n',
+    '@nuxtjs/i18n',
     // '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@pinia/nuxt',
