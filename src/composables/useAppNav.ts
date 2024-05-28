@@ -22,6 +22,13 @@ export const useAppNav = () => {
       key: 'Icons',
       url: 'https://icones.js.org/collection/ic',
       title: 'Icons',
+      target: '_blank',
+    },
+    {
+      key: 'tailwind',
+      url: '/_tailwind',
+      title: 'tailwind',
+      target: '_blank',
     },
   ]);
 

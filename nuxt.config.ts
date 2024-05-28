@@ -53,8 +53,14 @@ export default defineNuxtConfig({
   },
   css: [
     // 'ant-design-vue/dist/antd.css', // 引入 Ant Design 样式
+    // '~/assets/css/tailwind.css', //  Tailwind 入口文件
   ],
-
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   experimental: {
     payloadExtraction: false, // 取消生成 _payload.js
   },
@@ -68,13 +74,13 @@ export default defineNuxtConfig({
     // { src: '~/plugins/baidu-analytics', mode: 'client' }
     { src: '~/plugins/antd.ts', mode: 'client' },
   ],
-  vite:{
-    resolve:{
-      alias:{
+  vite: {
+    resolve: {
+      alias: {
         // 'ant-design-vue/es':"ant-design-vue/es",
         // 'ant-design-vue':"ant-design-vue/es"
-      }
-    }
+      },
+    },
   },
   modules: [
     '@nuxt/ui',
@@ -87,9 +93,10 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // '@nuxtjs/tailwindcss',
   ],
+
   content: {
     experimental: {
-      clientDB: false,
+      clientDB: true,
       search: {},
     },
     api: {
@@ -139,7 +146,7 @@ export default defineNuxtConfig({
   },
   antd: {
     // components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
-    imports: ['message','notification','Modal','App'],
+    imports: ['message', 'notification', 'Modal', 'App'],
     // icons: [],
     // extractStyle: true,
   },
@@ -150,5 +157,14 @@ export default defineNuxtConfig({
         dir: './src/assets/app-icons',
       },
     ],
+  },
+  tailwindcss: {
+    cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'first' }],
+    configPath: 'tailwind.config',
+    exposeConfig: {
+      level: 2,
+    },
+    config: {},
+    viewer: true,
   },
 });

@@ -34,6 +34,8 @@
   flex: 1;
   flex-direction: column;
   justify-content: stretch;
+  /* padding: 12px 0; */
+  /* min-height: 48px; */
 }
 .card-header,
 .card-footer {

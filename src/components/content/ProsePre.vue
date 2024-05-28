@@ -1,13 +1,11 @@
 <script lang="ts" setup>
+const countries = ['United States', 'Canada', 'Mexico'];
 
-
-const countries = ['United States', 'Canada', 'Mexico']
-
-const country = ref(countries[0])
+const country = ref(countries[0]);
 </script>
 
 <template>
-  <UCard class="prose-pre">
+  <Card class="prose-pre">
     <template #header>
       <div class="title-container">
         <div class="title-left">
@@ -22,13 +20,13 @@ const country = ref(countries[0])
     </template>
     <!-- <pre>{{ $attrs }}</pre> -->
 
-    <USelect v-model="country" :options="countries" />
+    <!-- <USelect v-model="country" :options="countries" /> -->
     <slot name="before" />
-    <div class="code-content">
+    <div class="code-content p-3">
       <pre><slot></slot></pre>
     </div>
     <slot name="after" />
-  </UCard>
+  </Card>
 </template>
 
 <style lang="scss" scoped>
@@ -43,7 +41,7 @@ const country = ref(countries[0])
 .code-content {
   // display: flex;
   color: #586878;
-  padding: 0 12px;
+  padding: 12px;
   background-color: rgb(15, 15, 27);
 }
 .title-container {

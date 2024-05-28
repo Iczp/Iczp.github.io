@@ -18,11 +18,7 @@ const handleMessage = () => {
       <a>login</a>
     </section>
   </header>
-  <main>
-
-  </main>
-
-  <slot></slot>
+  <!-- <slot></slot> -->
 </template>
 
 <style scoped>
