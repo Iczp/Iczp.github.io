@@ -1,4 +1,5 @@
 import { generateCss } from './src/hooks/antd';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -67,6 +68,14 @@ export default defineNuxtConfig({
     // { src: '~/plugins/baidu-analytics', mode: 'client' }
     { src: '~/plugins/antd.ts', mode: 'client' },
   ],
+  vite:{
+    resolve:{
+      alias:{
+        // 'ant-design-vue/es':"ant-design-vue/es",
+        // 'ant-design-vue':"ant-design-vue/es"
+      }
+    }
+  },
   modules: [
     '@nuxtjs/i18n',
     // '@nuxtjs/robots',
@@ -129,7 +138,7 @@ export default defineNuxtConfig({
   },
   antd: {
     // components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
-    imports: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],
+    imports: ['message','notification','Modal','App'],
     // icons: [],
     // extractStyle: true,
   },
