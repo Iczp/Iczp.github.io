@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import type { link } from 'fs-extra';
-
 const setctions = ref([
   {
     title: '站点地址',
@@ -11,6 +9,11 @@ const setctions = ref([
         title: 'Sitemap.xml',
         target: '_blank',
       },
+      {
+        url: 'https://www.tasao.com',
+        title: 'Tasao.com',
+        target: '_blank',
+      },
     ],
   },
   {
@@ -18,8 +21,18 @@ const setctions = ref([
     description: '“工欲善其事，必先利其器”',
     items: [
       {
-        url: '/sitemap.xml',
-        title: 'Sitemap.xml',
+        url: 'https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss',
+        title: 'bradlc.vscode-tailwindcss',
+        target: '_blank',
+      },
+      {
+        url: 'https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense',
+        title: 'windicss-intellisense',
+        target: '_blank',
+      },
+      {
+        url: 'https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc',
+        title: 'Nuxt.mdc',
         target: '_blank',
       },
     ],
@@ -33,17 +46,17 @@ const setctions = ref([
         title: 'github',
         target: '_blank',
       },
+      {
+        url: 'https://www.nuget.org/packages?q=IczpNet',
+        title: 'Nuget',
+        target: '_blank',
+      },
     ],
   },
   {
     title: '友情链接',
     description: '“工欲善其事，必先利其器”',
     items: [
-      {
-        url: 'https://www.tasao.com',
-        title: 'Tasao.com',
-        target: '_blank',
-      },
       {
         url: 'https://ui.nuxt.com/components/card',
         title: 'Nuxt-UI',
@@ -54,6 +67,11 @@ const setctions = ref([
         title: 'Tailwindcss',
         target: '_blank',
       },
+      {
+        url: 'https://icones.js.org/collection/mdi',
+        title: 'Materia Icons',
+        target: '_blank',
+      },
     ],
   },
 ]);
@@ -61,18 +79,21 @@ const setctions = ref([
 
 <template>
   <footer class="app-footer">
-    <main class="flex flex-row gap-6 justify-around border-dark-300 rounded-md">
-      <section v-for="(section, index) in setctions">
-        <h3>{{ section.title }}</h3>
-        <p class="text-dark-400">{{ section.description }}</p>
-        <ul>
-          <li v-for="item in section.items" :key="item.url" class="py-1">
-            <a :href="item.url" :target="item.target">{{ item.title }}</a>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <section class="copyright flex justify-center p-6">
+    <UCard>
+      <main class="grid grid-cols-4 gap-6 border-dark-300">
+        <section v-for="(section, index) in setctions">
+          <h3>{{ section.title }}</h3>
+          <p class="text-dark-400">{{ section.description }}</p>
+          <ul>
+            <li v-for="item in section.items" :key="item.url" class="py-1">
+              <a :href="item.url" :target="item.target">{{ item.title }}</a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </UCard>
+
+    <section class="flex justify-center p-6 copyright">
       <p>
         ©2014-{{ new Date().getFullYear() }} Created by
         <a href="https://www.iczp.net" target="_blank">IczpNet</a>

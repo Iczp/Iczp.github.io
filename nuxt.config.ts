@@ -25,7 +25,7 @@ export default defineNuxtConfig({
      */
     // dirs: [],
     global: true,
-    dirs: ['~/components'],
+    dirs: ['~/components','~/FileIcons'],
   },
   app: {
     baseURL: '/',

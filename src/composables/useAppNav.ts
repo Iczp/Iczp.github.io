@@ -17,19 +17,11 @@ export const useAppNav = () => {
       url: '/notes',
       title: 'Notes',
     },
-
     {
-      key: 'Icons',
-      url: 'https://icones.js.org/collection/ic',
-      title: 'Icons',
-      target: '_blank',
+      key: 'about',
+      url: '/about',
+      title: 'About',
     },
-    // {
-    //   key: 'tailwind',
-    //   url: '/_tailwind',
-    //   title: 'tailwind',
-    //   target: '_blank',
-    // },
   ]);
 
   const current = ref(

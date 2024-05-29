@@ -3,3 +3,10 @@
 ## CSS
 
 ### tailwindcss
+
+::card
+---
+title: dddddd
+description: description
+---
+::

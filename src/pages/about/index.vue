@@ -1,0 +1,55 @@
+<script lang="ts" setup>
+const pkg = usePkg();
+
+const depGroups = ref([
+  {
+    title: '开发依赖(devDependencies)',
+    items: pkg.devDependencies,
+  },
+  {
+    title: '依赖(dependencies)',
+    items: pkg.dependencies,
+  },
+]);
+</script>
+
+<template>
+  <main class="flex flex-col gap-4">
+    <h1>About:Index</h1>
+
+    <ul class="grid grid-cols-2 gap-4">
+      <li>
+        <UCard> Version: {{ pkg.version }} </UCard>
+      </li>
+      <li>
+        <UCard>
+          Author: <a>{{ pkg.author }}</a>
+        </UCard>
+      </li>
+    </ul>
+
+    <UCard v-for="(group, index) in depGroups">
+      <template #header>
+        <h3 class="m-0">{{ group.title }}</h3>
+      </template>
+      <ul class="grid grid-cols-4 gap-2">
+        <li class="flex items-center" v-for="(value, key) in group.items">
+          <a
+            :href="`https://www.npmjs.com/package/${key}`"
+            target="_blank"
+            class="inline-flex p-2 mr-2 border-red-300 border-1"
+          >
+            {{ key }}
+          </a>
+          <span class="inline-flex text-gray-500">{{ value }}</span>
+        </li>
+      </ul>
+    </UCard>
+
+    <UAlert
+      icon="i-heroicons-command-line"
+      description="You can add components to your app using the cli."
+      title="Heads up!"
+    />
+  </main>
+</template>

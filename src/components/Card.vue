@@ -1,15 +1,21 @@
-<script setup></script>
+<script lang="ts" setup>
+const props = defineProps<{
+  title?: string;
+  description?: string;
+}>();
+</script>
 
 <template>
-  <div class="card rounded-lg">
-    <div v-if="$slots.header" class="card-header">
+  <div class="rounded-lg card">
+    <div v-if="$slots.header || title" class="card-header">
       <slot name="header">
+        {{ title }}
         <slot name="header-left"></slot>
         <slot name="header-right"></slot>
       </slot>
     </div>
     <div class="card-body">
-      <slot></slot>
+      <slot>{{ description }}</slot>
     </div>
 
     <div v-if="$slots.footer" class="card-footer">

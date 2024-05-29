@@ -9,6 +9,12 @@ const country = ref(countries[0]);
     <template #header>
       <div class="title-container">
         <div class="title-left">
+          <!-- <Icon name="file-icons:yaml-alt2" />
+          <Icon name="vscode-icons:file-type-typescript" />
+          <Icon name=" codicon:terminal-bash" />
+          
+          <Icon name=" vscode-icons:file-type-vue" /> -->
+          <MdiCodeJson />
           <span class="tag-item language">{{ $attrs.language }}</span>
           <span class="tag-item filename">{{ $attrs.filename }}</span>
         </div>
@@ -22,8 +28,8 @@ const country = ref(countries[0]);
 
     <!-- <USelect v-model="country" :options="countries" /> -->
     <slot name="before" />
-    <div class="code-content p-3 overflow-x-auto max-sm">
-      <pre class="break-all break-words space-x-1"><slot></slot></pre>
+    <div class="p-3 overflow-x-auto code-content max-sm">
+      <pre class="space-x-1 break-words break-all"><slot></slot></pre>
     </div>
     <slot name="after" />
   </Card>

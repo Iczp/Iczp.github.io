@@ -4,7 +4,7 @@
   <AppHeader />
   <!-- <div class="current-position">{{ $route.path }}</div> -->
   <slot></slot>
-  <AppFooter />
+  <AppFooter  class="m-6" />
 </template>
 
 <style scoped></style>
