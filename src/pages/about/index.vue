@@ -3,11 +3,11 @@ const pkg = usePkg();
 
 const depGroups = ref([
   {
-    title: '开发依赖(devDependencies)',
+    title: '开发依赖(Dev Dependencies)',
     items: pkg.devDependencies,
   },
   {
-    title: '依赖(dependencies)',
+    title: '依赖(Dependencies)',
     items: pkg.dependencies,
   },
 ]);
@@ -30,7 +30,10 @@ const depGroups = ref([
 
     <UCard v-for="(group, index) in depGroups">
       <template #header>
-        <h3 class="m-0">{{ group.title }}</h3>
+        <h3 class="flex flex-row items-center">
+          <PackageDependencies class="inline-flex mr-2" />
+          <span>{{ group.title }}</span>
+        </h3>
       </template>
       <ul class="grid grid-cols-4 gap-2">
         <li class="flex items-center" v-for="(value, key) in group.items">

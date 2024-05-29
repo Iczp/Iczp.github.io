@@ -25,7 +25,7 @@ export default defineNuxtConfig({
      */
     // dirs: [],
     global: true,
-    dirs: ['~/components','~/FileIcons'],
+    dirs: ['~/components','~/FileIcons','~/Icons'],
   },
   app: {
     baseURL: '/',
@@ -82,6 +82,9 @@ export default defineNuxtConfig({
         // 'ant-design-vue':"ant-design-vue/es"
       },
     },
+  },
+  build: {
+    extractCSS: true, // 这将提取所有 CSS 到单独的文件中，而不是内联在 JS 中。
   },
   modules: [
     '@nuxt/ui',

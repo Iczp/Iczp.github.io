@@ -6,7 +6,7 @@ const setctions = ref([
     items: [
       {
         url: '/sitemap.xml',
-        title: 'Sitemap.xml',
+        title: '站点地图',
         target: '_blank',
       },
       {
@@ -82,8 +82,8 @@ const setctions = ref([
     <UCard>
       <main class="grid grid-cols-4 gap-6 border-dark-300">
         <section v-for="(section, index) in setctions">
-          <h3>{{ section.title }}</h3>
-          <p class="text-dark-400">{{ section.description }}</p>
+          <h3 class="text-cyan-100">{{ section.title }}</h3>
+          <p class="text-cyan-900">{{ section.description }}</p>
           <ul>
             <li v-for="item in section.items" :key="item.url" class="py-1">
               <a :href="item.url" :target="item.target">{{ item.title }}</a>
@@ -92,13 +92,7 @@ const setctions = ref([
         </section>
       </main>
     </UCard>
-
-    <section class="flex justify-center p-6 copyright">
-      <p>
-        ©2014-{{ new Date().getFullYear() }} Created by
-        <a href="https://www.iczp.net" target="_blank">IczpNet</a>
-      </p>
-    </section>
+    <Copyright />
   </footer>
 </template>
 

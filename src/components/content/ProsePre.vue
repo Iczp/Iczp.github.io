@@ -20,7 +20,7 @@ const country = ref(countries[0]);
         </div>
 
         <div class="title-right">
-          <IconsCopy />
+          <ContentCopy />
         </div>
       </div>
     </template>
