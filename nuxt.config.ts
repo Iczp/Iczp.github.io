@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     // strict: true,
   },
   srcDir: 'src/',
+  // buildDir: './output/',
   imports: {
     autoImport: true,
     presets: [
@@ -25,11 +26,12 @@ export default defineNuxtConfig({
      */
     // dirs: [],
     global: true,
-    dirs: ['~/components','~/FileIcons','~/Icons'],
+    dirs: ['~/components', '~/FileIcons', '~/Icons'],
   },
   app: {
     baseURL: '/',
     buildAssetsDir: 'static',
+    rootId: 'iczp_net',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -83,9 +85,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  build: {
-    extractCSS: true, // 这将提取所有 CSS 到单独的文件中，而不是内联在 JS 中。
-  },
+
   modules: [
     '@nuxt/ui',
     '@nuxtjs/i18n',
