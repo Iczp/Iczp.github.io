@@ -5,7 +5,6 @@
 <template>
   <main class="notes flex flex-row gap-6 mx-6">
     <ContentSilder class="w-56" />
-
     <ContentMain class="flex-1" />
   </main>
 </template>

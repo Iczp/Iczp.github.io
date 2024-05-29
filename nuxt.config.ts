@@ -1,4 +1,5 @@
 import { generateCss } from './src/hooks/antd';
+import { resolve } from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -104,13 +105,13 @@ export default defineNuxtConfig({
     },
 
     // documentDriven: true,
-    // sources: {
-    //   content: {
-    //     driver: 'fs',
-    //     prefix: '/notes', // All contents inside this source will be prefixed with `/notes`
-    //     base: resolve(__dirname, 'content/notes'),
-    //   },
-    // },
+    sources: {
+      content: {
+        driver: 'fs',
+        prefix: '/notes', // All contents inside this source will be prefixed with `/notes`
+        base: resolve(__dirname, './content'),
+      },
+    },
     // contentHead: true,
     highlight: {
       // Theme used in all color schemes.
@@ -169,7 +170,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
-    }
-  }
+      routes: ['/sitemap.xml'],
+    },
+  },
 });

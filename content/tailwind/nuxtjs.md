@@ -1,6 +1,6 @@
 
 
-# Nuxt3中使用Tailwind 
+# Nuxt3中使用Tailwind @@@@
 
 > 官方网站：[https://www.tailwindcss.cn/docs/guides/nuxtjs#standard](https://www.tailwindcss.cn/docs/guides/nuxtjs#standard)
 
