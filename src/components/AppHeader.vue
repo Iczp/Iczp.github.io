@@ -16,6 +16,10 @@ const handleMessage = () => {
     <AppNav />
     <section class="header-extra">
       <a>login</a>
+
+      <ClientOnly>
+        <a href="/_tailwind" target="_blank">Tailwind</a>
+      </ClientOnly>
     </section>
   </header>
   <!-- <slot></slot> -->

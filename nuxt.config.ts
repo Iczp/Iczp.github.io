@@ -167,4 +167,9 @@ export default defineNuxtConfig({
     config: {},
     viewer: true,
   },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  }
 });

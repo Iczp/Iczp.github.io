@@ -23,7 +23,7 @@ const country = ref(countries[0]);
     <!-- <USelect v-model="country" :options="countries" /> -->
     <slot name="before" />
     <div class="code-content p-3 overflow-x-auto max-sm">
-      <pre class="break-all space-x-1"><slot></slot></pre>
+      <pre class="break-all break-words space-x-1"><slot></slot></pre>
     </div>
     <slot name="after" />
   </Card>

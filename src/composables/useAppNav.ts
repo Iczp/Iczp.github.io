@@ -24,12 +24,12 @@ export const useAppNav = () => {
       title: 'Icons',
       target: '_blank',
     },
-    {
-      key: 'tailwind',
-      url: '/_tailwind',
-      title: 'tailwind',
-      target: '_blank',
-    },
+    // {
+    //   key: 'tailwind',
+    //   url: '/_tailwind',
+    //   title: 'tailwind',
+    //   target: '_blank',
+    // },
   ]);
 
   const current = ref(
