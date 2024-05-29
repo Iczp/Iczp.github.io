@@ -3,20 +3,36 @@
 </script>
 
 <template>
-  <main class="notes">
-    <h1>
-      <NuxtLink to="/">Home</NuxtLink>
-    </h1>
-    <h2>Content</h2>
-    <slot></slot>
+  <main class="notes flex flex-row gap-6 mx-6">
+    <div class="flex flex-col w-56 flex-shrink-0">
+      <ContentNavigation />
+    </div>
+
+    <div class="flex flex-col flex-1">
+      <main class="flex">
+        <ContentDoc>
+          <template v-slot="{ doc }">
+            <article class="w-full space-y-12">
+              <ContentRenderer :value="doc" />
+            </article>
+          </template>
+          <template #not-found>
+            <h1>Document not found</h1>
+          </template>
+          <template #empty>
+            <h1>Document is empty</h1>
+          </template>
+        </ContentDoc>
+      </main>
+    </div>
   </main>
 </template>
 
 <style scoped>
 .notes {
   display: flex;
-  flex-direction: column;
-  line-height: 200%;
-  margin: 24px;
+}
+.content-doc {
+  @apply gap-3;
 }
 </style>

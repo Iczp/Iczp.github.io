@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="card">
+  <div class="card rounded-lg">
     <div v-if="$slots.header" class="card-header">
       <slot name="header">
         <slot name="header-left"></slot>

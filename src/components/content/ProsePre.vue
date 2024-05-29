@@ -5,7 +5,7 @@ const country = ref(countries[0]);
 </script>
 
 <template>
-  <Card class="prose-pre">
+  <Card class="my-3">
     <template #header>
       <div class="title-container">
         <div class="title-left">
@@ -22,8 +22,8 @@ const country = ref(countries[0]);
 
     <!-- <USelect v-model="country" :options="countries" /> -->
     <slot name="before" />
-    <div class="code-content p-3">
-      <pre><slot></slot></pre>
+    <div class="code-content p-3 overflow-x-auto max-sm">
+      <pre class="break-all space-x-1"><slot></slot></pre>
     </div>
     <slot name="after" />
   </Card>

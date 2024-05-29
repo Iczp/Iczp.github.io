@@ -15,6 +15,6 @@
   // background-color: rgb(36, 34, 52);
   // color: rgb(34, 219, 80);
   // border-radius: 0.25em;
-  @apply inline-block leading-3 rounded-md p-1.5  text-sm bg-gray-800;
+  @apply inline-block  rounded-md p-0.5 m-0.5  text-sm bg-gray-800;
 }
 </style>
