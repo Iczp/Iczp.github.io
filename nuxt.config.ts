@@ -106,8 +106,11 @@ export default defineNuxtConfig({
     api: {
       baseURL: '/api/content',
     },
-
     // documentDriven: true,
+    documentDriven: {
+      page: false, // Keep page fetching enabled
+      surround: false, // Disable surround fetching
+    },
     sources: {
       content: {
         driver: 'fs',
