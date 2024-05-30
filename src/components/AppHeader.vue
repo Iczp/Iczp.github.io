@@ -8,6 +8,11 @@ const tabChange = (index: number) => {
 const handleMessage = () => {
   message.info('This is a normal message');
 };
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+const toggleTheme = () => {
+  console.log(isDark.value);
+};
 </script>
 
 <template>
@@ -20,6 +25,8 @@ const handleMessage = () => {
       <ClientOnly>
         <a href="/_tailwind" target="_blank">Tailwind</a>
       </ClientOnly>
+
+      <ThemeMode />
     </section>
   </header>
   <!-- <slot></slot> -->

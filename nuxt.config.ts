@@ -44,10 +44,10 @@ export default defineNuxtConfig({
         //   rel: 'stylesheet',
         //   href: '/css/scroller.css', // 引用生成的静态样式文件
         // },
-        {
-          rel: 'stylesheet',
-          href: '/css/style.css', // 引用生成的静态样式文件
-        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '/css/style.css', // 引用生成的静态样式文件
+        // },
       ],
       script: [
         // { src: 'https://hm.baidu.com/hm.js?2262f0ef72fa0d0c3a1fbd3c1e3087cc' },
@@ -137,8 +137,14 @@ export default defineNuxtConfig({
         'bash',
         'ts',
         'js',
+        'java',
+        'javascript',
+        'cmd',
         'json',
         'css',
+        'less',
+        'scss',
+        'sass',
         'html',
         'json5',
         'yaml',

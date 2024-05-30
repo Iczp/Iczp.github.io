@@ -54,17 +54,10 @@ pre code .line {
   background-color: rgb(15, 15, 27);
 }
 .title-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-  gap: 8px;
+  @apply flex flex-row justify-between items-center p-4 gap-4;
 }
 .title-left {
-  display: flex;
-  gap: 8px;
-  flex-direction: row;
+  @apply flex gap-4 flex-row;
 }
 .title-right {
   display: flex;

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 const target = ref('');
 const attrs = useAttrs();
-const href = attrs.href as string;
-if (href.startsWith('http')) {
+const href = attrs.href as string | undefined;
+if (href?.startsWith('http')) {
   target.value = '_blank';
 }
 </script>

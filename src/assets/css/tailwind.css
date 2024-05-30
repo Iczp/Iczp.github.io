@@ -3,12 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose {
+  /* @apply text-gray-900; */
+  max-width: unset;
+}
+.prose a {
+  @apply text-sky-500;
+}
+
 pre code .line {
   white-space: pre-wrap;
 }
 
 blockquote {
-  @apply p-4 my-4 bg-slate-900 rounded-md border-collapse border-l-2 border-solid border-slate-500;
+  @apply p-4 my-4 rounded-md border-collapse border-l-2 border-solid border-slate-500;
 }
 h1 {
   @apply text-4xl py-6 leading-10;
@@ -19,3 +27,5 @@ h2 {
 h3 {
   @apply text-xl py-2;
 }
+
+

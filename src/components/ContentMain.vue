@@ -4,7 +4,7 @@
     <ContentDoc>
       <template v-slot="{ doc }">
         <article class="w-full space-y-12">
-          <ContentRenderer :value="doc" />
+          <ContentRenderer :value="doc" class="" />
         </article>
       </template>
       <template #not-found>
