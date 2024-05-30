@@ -17,7 +17,7 @@ const depGroups = ref([
   <main class="flex flex-col gap-4">
     <h1>About:Index</h1>
 
-    <ul class="grid grid-cols-2 gap-4">
+    <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <li>
         <UCard> Version: {{ pkg.version }} </UCard>
       </li>
@@ -35,7 +35,7 @@ const depGroups = ref([
           <span>{{ group.title }}</span>
         </h3>
       </template>
-      <ul class="grid grid-cols-4 gap-2">
+      <ul class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
         <li class="flex items-center" v-for="(value, key) in group.items">
           <a
             :href="`https://www.npmjs.com/package/${key}`"

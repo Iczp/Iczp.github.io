@@ -1,4 +1,7 @@
-在 Nuxt 3 中，如果你想将 Tailwind CSS 提取到一个单独的文件而不是内联在 HTML 源文件中，你可以遵循以下步骤：
+# 在 Nuxt 3 中，如果你想将 Tailwind CSS 提取到一个单独的文件而不是内联在 HTML 源文件中，你可以遵循以下步骤：
+
+
+
 
 1. **安装依赖**： 确保你已经安装了 `tailwindcss` 和相关的 PostCSS 依赖。
 

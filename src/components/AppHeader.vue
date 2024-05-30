@@ -14,7 +14,7 @@ const handleMessage = () => {
   <header class="app-header">
     <Logo />
     <AppNav />
-    <section class="header-extra">
+    <section class="flex flex-row gap-3 header-extra">
       <a>login</a>
 
       <ClientOnly>

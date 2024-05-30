@@ -1,5 +1,6 @@
 <template>
   <main class="flex flex-col">
+    <!-- <PageToc /> -->
     <ContentDoc>
       <template v-slot="{ doc }">
         <article class="w-full space-y-12">

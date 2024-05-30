@@ -36,6 +36,9 @@ const country = ref(countries[0]);
 </template>
 
 <style lang="scss" scoped>
+pre code .line {
+  white-space: pre-wrap;
+}
 .prose-pre {
   --card-border: 1px solid rgba(35, 51, 74, 0.8);
 

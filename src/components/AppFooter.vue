@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const setctions = ref([
   {
-    title: '站点地址',
+    title: '站点地图',
     description: '“工欲善其事，必先利其器”',
     items: [
       {
@@ -80,7 +80,7 @@ const setctions = ref([
 <template>
   <footer class="app-footer">
     <UCard>
-      <main class="grid grid-cols-4 gap-6 border-dark-300">
+      <main class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 border-dark-300">
         <section v-for="(section, index) in setctions">
           <h3 class="text-cyan-100">{{ section.title }}</h3>
           <p class="text-cyan-900">{{ section.description }}</p>

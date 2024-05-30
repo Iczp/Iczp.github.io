@@ -4,6 +4,9 @@ import { resolve } from 'path';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  webpack: {
+    extractCSS: true,
+  },
   typescript: {
     // typeCheck: true,
     // strict: true,
@@ -106,8 +109,7 @@ export default defineNuxtConfig({
     api: {
       baseURL: '/api/content',
     },
-
-    // documentDriven: true,
+    documentDriven: true,
     sources: {
       content: {
         driver: 'fs',

@@ -2,11 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre code .line {
+  white-space: pre-wrap;
+}
+
+blockquote {
+  @apply p-4 my-4 bg-slate-900 rounded-md border-collapse border-l-2 border-solid border-slate-500;
+}
 h1 {
   @apply text-4xl py-6 leading-10;
 }
 h2 {
-  @apply text-3xl py-4 ;
+  @apply text-3xl py-4;
 }
 h3 {
   @apply text-xl py-2;
