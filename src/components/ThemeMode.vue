@@ -4,8 +4,8 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <botton @click="toggleDark()">
+  <button @click="toggleDark()">
     <LightMode v-if="isDark" />
     <NightMode v-else />
-  </botton>
+  </button>
 </template>

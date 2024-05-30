@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('./theme.scss');
+@import url('./theme-dark.scss');
+
 .prose {
   /* @apply text-gray-900; */
   max-width: unset;
@@ -27,5 +30,3 @@ h2 {
 h3 {
   @apply text-xl py-2;
 }
-
-
