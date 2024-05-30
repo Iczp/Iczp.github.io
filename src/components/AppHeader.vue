@@ -24,8 +24,8 @@ const toggleTheme = () => {
 
       <ClientOnly>
         <a href="/_tailwind" target="_blank">Tailwind</a>
+        
       </ClientOnly>
-
       <ThemeMode />
     </section>
   </header>
@@ -33,9 +33,11 @@ const toggleTheme = () => {
 </template>
 
 <style scoped>
+.backdrop-blur-8 {
+  backdrop-filter: blur(8px);
+}
 .app-header {
-  display: flex;
-
+  /* display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -43,12 +45,12 @@ const toggleTheme = () => {
   top: 0;
   border-bottom: 1px solid rgb(35, 42, 35);
   margin: auto;
-  /* border-radius: 12px; */
   padding: 12px 24px;
-  /* background-color: rgb(13, 8, 34); */
   background-color: rgba(0, 0, 0, 0.565);
-  backdrop-filter: blur(8px);
-  z-index: 999;
+  
+  z-index: 999; */
+
+  @apply flex flex-row top-0 sticky border-b border-gray-300 z-50 backdrop-blur-8 justify-between items-center  px-3;
 }
 .app-header::after {
   content: '';

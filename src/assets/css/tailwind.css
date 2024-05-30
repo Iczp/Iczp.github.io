@@ -3,30 +3,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('./theme.scss');
-@import url('./theme-dark.scss');
+@layer base {
 
-.prose {
-  /* @apply text-gray-900; */
-  max-width: unset;
-}
-.prose a {
-  @apply text-sky-500;
+  html::selection {
+  }
+  html::-moz-selection {
+    @apply bg-green-500;
+  }
+  input {
+    @apply caret-green-500;
+  }
+
+  body {
+    @apply bg-gray-50 text-sm text-gray-950 leading-6;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  blockquote {
+    @apply p-4 my-4 rounded-md border-collapse border-l-2 border border-solid bg-gray-50 border-green-200 hover:border-green-800;
+  }
+  ul {
+    @apply m-4;
+  }
 }
 
-pre code .line {
-  white-space: pre-wrap;
+@layer base {
+  .dark body {
+    @apply bg-gray-900 text-gray-400;
+  }
+  .dark blockquote {
+    @apply border-slate-100 bg-gray-900;
+  }
 }
 
-blockquote {
-  @apply p-4 my-4 rounded-md border-collapse border-l-2 border-solid border-slate-500;
-}
-h1 {
-  @apply text-4xl py-6 leading-10;
-}
-h2 {
-  @apply text-3xl py-4;
-}
-h3 {
-  @apply text-xl py-2;
+@layer utilities {
+  .prose {
+    /* @apply text-gray-900; */
+    max-width: unset;
+  }
+  .prose a {
+    @apply text-sky-500;
+  }
+
+  pre code .line {
+    white-space: pre-wrap;
+  }
+
+  h1 {
+    @apply text-4xl py-6 leading-10;
+  }
+  h2 {
+    @apply text-3xl py-4;
+  }
+  h3 {
+    @apply text-xl py-2;
+  }
 }
