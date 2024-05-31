@@ -1,29 +1,34 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    items: any[];
+    items: Array<any>;
     depth?: number;
+    parents?: Array<any>;
   }>(),
   {
     depth: 0,
+    parents: [],
   }
 );
 </script>
 
 <template>
   <ul class="trees" :depth="depth">
-    <li v-for="(item, index) in items" :index="index" :key="index">
-      <div class="li" :class="{ active: index == 3 }">
-        <slot :item="item" :depth="depth" :index="index">{{ item.title }}</slot>
+    <li v-for="(item, index) in items" :index="index" :key="index" class="flex flex-col">
+      <div class="div" :class="{ active: index == 3 }">
+        <slot :item="item" :depth="depth" :index="index" :parents="parents">{{
+          item.title
+        }}</slot>
       </div>
 
       <Trees
         v-if="Array.isArray(item.children) && item.children.length != 0"
         :items="item.children"
         :depth="depth + 1"
+        :parents="[item, ...parents]"
       >
         <template v-slot="{ item, depth, index }">
-          <slot :item="item" :depth="depth" :index="index">
+          <slot :item="item" :depth="depth" :index="index" :parents="parents">
             {{ item.title }}
           </slot>
         </template>
@@ -63,28 +68,29 @@ withDefaults(
 }
 
 ul {
-  @apply border-l border-l pl-8;
+  @apply flex flex-col border-l border-l pl-8;
 }
 
-ul[depth='0']>li:only-child>.li{
-    @apply pl-0;
+
+
+ul[depth='0'] > li:only-child > .div {
+  @apply pl-0;
 }
-ul[depth='0']>li:only-child>ul{
-    @apply pl-2;
+ul[depth='0'] > li:only-child > ul {
+  @apply pl-2;
 }
 ul[depth='0'] {
   @apply p-0 m-0;
 }
 
-
-.li {
-  @apply relative  pl-6 h-8 flex items-center;
+.div {
+  @apply relative pl-6 flex flex-col;
 }
-.li::before {
+.div::before {
   content: '';
   @apply border-l border-l top-0 bottom-0 absolute left-0 z-20;
 }
-li:last-child > .li::before {
+li:last-child > .div::before {
   @apply h-1/2;
 }
 
@@ -92,45 +98,44 @@ ul[depth='0'],
 li:last-child > ul {
   @apply border-none;
 }
-.li::after {
+.div::after {
   content: '';
   @apply border-t border-t top-1/2 bottom-0 absolute left-0 h-0.5 w-4 z-10;
 }
 
-ul[depth='0'] > li[index='0'] > .li::before {
+ul[depth='0'] > li[index='0'] > .div::before {
   @apply top-1/2;
 }
 
 ul,
-.li::before,
-.li::after {
+.div::before,
+.div::after {
   @apply border-color;
 }
 
-.li:hover::before,
-.li:hover::after {
+.div:hover::before,
+.div:hover::after {
   @apply hover-color;
 }
 
-.li.active::before,
-.li.active::after {
+.div.active::before,
+.div.active::after {
   @apply active-color;
 }
 
-.li.active:hover::before,
-.li.active:hover::after {
+.div.active:hover::before,
+.div.active:hover::after {
   @apply active-hover-color;
 }
 
-
-ul[depth='0'] > li:only-child > .li::before,
-ul[depth='0'] > li:only-child > .li::after {
+ul[depth='0'] > li:only-child > .div::before,
+ul[depth='0'] > li:only-child > .div::after {
   @apply hidden;
 }
 
 ul,
-.li::before,
-.li::after {
+.div::before,
+.div::after {
   border-style: var(--border-style);
 }
 </style>

@@ -19,11 +19,15 @@ const dir = navDirFromPath(route.path, navigation.value);
 
     <Trees :items="navigation">
       <template v-slot="{ item, depth, index }">
-        <h3>
-          <ContentCopy :content="item.path" class="mr-1" />
+        <h3 class="flex flex-row justify-between items-center h-8">
           <a :href="navBottomLink(item)">
+            <ContentCopy :content="item.path" class="mr-1" />
             {{ depth }}.{{ index }} {{ item.title }}
           </a>
+          <span>
+            <ArrowRight />
+            <!-- <ArrowDown /> -->
+          </span>
         </h3>
       </template>
     </Trees>
