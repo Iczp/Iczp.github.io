@@ -28,12 +28,14 @@ const props = defineProps<{
 </template>
 <style scoped>
 .card {
-  --card-border: 1px solid rgba(35, 51, 74, 0.8);
+  /* --card-border: 1px solid rgba(35, 51, 74, 0.8);
   display: flex;
   flex-direction: column;
   border: var(--card-border);
   overflow: hidden;
-  box-sizing: border-box;
+  box-sizing: border-box; */
+
+  @apply flex flex-col border border-gray-200 border-solid rounded-xl overflow-hidden dark:border-gray-800;
 }
 .card-body {
   display: flex;

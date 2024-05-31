@@ -40,7 +40,7 @@ pre code .line {
   white-space: pre-wrap;
 }
 .prose-pre {
-  // --card-border: 1px solid rgba(35, 51, 74, 0.8);
+  --card-border: 1px solid rgba(35, 51, 74, 0.8);
 
   display: flex;
   flex-direction: column;

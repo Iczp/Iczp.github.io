@@ -11,7 +11,7 @@ export default <Partial<Config>>{
     './src/app.vue',
     './src/error.vue',
   ],
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
       fontFamily: {
@@ -30,6 +30,19 @@ export default <Partial<Config>>{
           800: '#016538',
           900: '#0A5331',
           950: '#052e16',
+        },
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#333',
+            a: {
+              color: '#3182ce',
+              '&:hover': {
+                color: '#2c5282',
+              },
+            },
+          },
         },
       },
     },

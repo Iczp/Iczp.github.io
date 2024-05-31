@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// const isDark = useDark();
-// const toggleDark = useToggle(isDark);
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 const colorMode = useColorMode();
 
 const toggleColorMode = () => {
@@ -10,10 +10,10 @@ const toggleColorMode = () => {
 </script>
 
 <template>
-  <!-- <button @click="toggleDark()">
+  <button @click="toggleDark()">
     <LightMode v-if="isDark" />
     <NightMode v-else />
-  </button> -->
+  </button>
 
   <ColorScheme placeholder="..." tag="div">
     <div @click="toggleColorMode">

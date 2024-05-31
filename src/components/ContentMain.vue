@@ -3,8 +3,10 @@
     <!-- <PageToc /> -->
     <ContentDoc>
       <template v-slot="{ doc }">
-        <article class="w-full space-y-12">
-          <ContentRenderer :value="doc" class="prose dark:prose-dark" />
+        <article
+          class="w-full space-y-12 prose prose-dark prose-a:no-underline hover:prose-a:underline dark:prose-invert"
+        >
+          <ContentRenderer :value="doc" />
         </article>
       </template>
       <template #not-found>
