@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { message } from 'ant-design-vue';
 const props = defineProps<{
-  text?: string | undefined;
+  content?: string | undefined;
 }>();
 
 const copyContent = () => {

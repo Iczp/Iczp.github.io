@@ -110,7 +110,7 @@ export default defineNuxtConfig({
     // documentDriven: true,
     documentDriven: {
       page: false, // Keep page fetching enabled
-      surround: false, // Disable surround fetching
+      surround: true, // Disable surround fetching
     },
     sources: {
       content: {

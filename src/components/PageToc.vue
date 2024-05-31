@@ -1,10 +1,41 @@
 <script setup lang="ts">
 const { toc } = useContent();
+
+const route = useRoute();
+
+const { data: navigation } = await useAsyncData('navigation', () =>
+  fetchContentNavigation()
+);
+
+const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
+  useContentHelpers();
+
+const dir = navDirFromPath(route.path, navigation.value);
 </script>
 
 <template>
   <div class="page-toc">
-    <h2>Table of Contents</h2>
+    <h2>Table of Contents [0].children</h2>
+
+    <Trees :items="navigation">
+      <template v-slot="{ item,depth,index }">
+        <h3>
+          <ContentCopy :content="item.path" class="mr-1"/>
+          {{ depth }} - {{ index }}
+          <a :href="navBottomLink(item)">{{ item.title }}</a>
+        </h3>
+      </template>
+    </Trees>
+    <!-- <pre>
+      navigation:
+      {{ navigation }}
+    </pre>
+
+    <pre>
+      dir:
+      {{ dir }}
+      </pre
+    > -->
     <h3>{{ toc }}</h3>
     <ul v-if="toc && toc.links">
       <li v-for="link in toc.links" :key="link.text">
@@ -16,6 +47,4 @@ const { toc } = useContent();
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
