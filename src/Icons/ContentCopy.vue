@@ -20,8 +20,8 @@ const name = ref('ic:baseline-content-copy');
 </script>
 
 <template>
-  <span title="复制" class="cursor-pointer">
-    <Icon :name="name" @click="copyContent" :title="title" />
+  <span title="复制" class="cursor-pointer" @click="copyContent">
+    <Icon :name="name" />
   </span>
   <!-- <Icon name="ic:baseline-check" /> -->
 </template>

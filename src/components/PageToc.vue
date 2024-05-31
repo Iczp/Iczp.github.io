@@ -18,11 +18,12 @@ const dir = navDirFromPath(route.path, navigation.value);
     <h2>Table of Contents [0].children</h2>
 
     <Trees :items="navigation">
-      <template v-slot="{ item,depth,index }">
+      <template v-slot="{ item, depth, index }">
         <h3>
-          <ContentCopy :content="item.path" class="mr-1"/>
-          {{ depth }} - {{ index }}
-          <a :href="navBottomLink(item)">{{ item.title }}</a>
+          <ContentCopy :content="item.path" class="mr-1" />
+          <a :href="navBottomLink(item)">
+            {{ depth }}.{{ index }} {{ item.title }}
+          </a>
         </h3>
       </template>
     </Trees>
