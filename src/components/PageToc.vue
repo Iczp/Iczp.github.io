@@ -17,6 +17,5 @@ const { toc } = useContent();
 </template>
 
 <style lang="scss" scoped>
-.page-toc {
-}
+
 </style>

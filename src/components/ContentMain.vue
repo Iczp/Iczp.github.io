@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col">
-    <!-- <PageToc /> -->
+    <PageToc />
     <ContentDoc>
       <template v-slot="{ doc }">
         <article
@@ -20,7 +20,5 @@
 </template>
 
 <style lang="scss" scoped>
-// .article {
-//   @apply w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline  hover:prose-a:underline dark:prose-invert;
-// }
+
 </style>

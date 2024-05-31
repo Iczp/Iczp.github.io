@@ -5,7 +5,9 @@ const country = ref(countries[0]);
 </script>
 
 <template>
-  <div class="container">
+  <div
+    class="container flex flex-col rounded-lg border border-color overflow-hidden my-3"
+  >
     <header class="flex flex-row justify-between p-2">
       <div class="flex flex-row items-center gap-1">
         <MdiCodeJson />
@@ -25,20 +27,14 @@ const country = ref(countries[0]);
 </template>
 
 <style lang="scss" scoped>
-
-.border-color{
+.border-color {
   @apply border-gray-300 dark:border-gray-700;
 }
 
-.container {
-  @apply flex flex-col rounded-lg border border-color overflow-hidden my-3;
-}
 pre code .line {
   white-space: pre-wrap;
 }
 
-.code-content {
-}
 header {
   @apply flex flex-row justify-between items-center p-4 gap-4;
 }
