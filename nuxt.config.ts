@@ -95,7 +95,8 @@ export default defineNuxtConfig({
     '@ant-design-vue/nuxt',
     'nuxt-icon',
     '@nuxt/content',
-    // '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
   ],
 
   content: {
@@ -179,6 +180,16 @@ export default defineNuxtConfig({
     },
     config: {},
     viewer: true,
+  },
+  colorMode: {
+    preference: 'system', // system | light | dark, default value of $colorMode.preference 
+    fallback: '', // fallback value if not system preference found
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'theme-mode',
   },
   nitro: {
     prerender: {

@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 @layer base {
-
   html::selection {
   }
   html::-moz-selection {
@@ -26,9 +25,6 @@
   }
   blockquote {
     @apply p-4 my-4 rounded-md border-collapse border-l-2 border border-solid bg-gray-50 border-green-200 hover:border-green-800;
-  }
-  ul {
-    @apply m-4;
   }
 }
 
@@ -54,7 +50,7 @@
     white-space: pre-wrap;
   }
 
-  h1 {
+  /* h1 {
     @apply text-4xl py-6 leading-10;
   }
   h2 {
@@ -62,5 +58,17 @@
   }
   h3 {
     @apply text-xl py-2;
+  } */
+
+  .dark .prose {
+    /* 在这里添加你的自定义样式 */
+    @apply text-gray-300; /* 示例：设置文本颜色 */
+  }
+  .dark .prose blockquote,
+  .dark .prose p,
+  .dark .prose p,
+  .dark .prose *:not(pre) > code {
+    /* 在这里添加你的自定义样式 */
+    @apply text-gray-300; /* 示例：设置文本颜色 */
   }
 }

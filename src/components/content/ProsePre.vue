@@ -28,8 +28,8 @@ const country = ref(countries[0]);
 
     <!-- <USelect v-model="country" :options="countries" /> -->
     <slot name="before" />
-    <div class="p-3 overflow-x-auto code-content max-sm">
-      <pre class="space-x-1 break-words break-all"><slot></slot></pre>
+    <div class="code-content">
+      <pre class="break-words break-all m-0 rounded-none"><slot></slot></pre>
     </div>
     <slot name="after" />
   </Card>
@@ -48,10 +48,6 @@ pre code .line {
   border-radius: 8px;
 }
 .code-content {
-  // display: flex;
-  color: #586878;
-  padding: 12px;
-  background-color: rgb(15, 15, 27);
 }
 .title-container {
   @apply flex flex-row justify-between items-center p-4 gap-4;
