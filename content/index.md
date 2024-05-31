@@ -6,7 +6,7 @@
 > “工欲善其事，必先利其器”
 
 
-```yaml
+```yaml [files.ts]{1,2} meta=123
 ::u-card
 
 items:

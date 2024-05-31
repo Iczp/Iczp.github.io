@@ -5,55 +5,45 @@ const country = ref(countries[0]);
 </script>
 
 <template>
-  <Card class="my-3">
-    <template #header>
-      <div class="title-container">
-        <div class="title-left">
-          <!-- <Icon name="file-icons:yaml-alt2" />
-          <Icon name="vscode-icons:file-type-typescript" />
-          <Icon name=" codicon:terminal-bash" />
-          
-          <Icon name=" vscode-icons:file-type-vue" /> -->
-          <MdiCodeJson />
-          <span class="tag-item language">{{ $attrs.language }}</span>
-          <span class="tag-item filename">{{ $attrs.filename }}</span>
-        </div>
-
-        <div class="title-right">
-          <ContentCopy />
-        </div>
+  <div class="container">
+    <header class="flex flex-row justify-between p-2">
+      <div class="flex flex-row items-center gap-1">
+        <MdiCodeJson />
+        <!-- <span class="tag-item language">{{ $attrs.language }}</span> -->
+        <span class="tag-item filename">{{ $attrs.filename }}</span>
       </div>
-    </template>
-    <!-- <pre>{{ $attrs }}</pre> -->
+      <div class="flex flex-row items-center">
+        <ContentCopy />
+      </div>
+    </header>
 
-    <!-- <USelect v-model="country" :options="countries" /> -->
-    <slot name="before" />
-    <div class="code-content">
+    <main class="code-content">
       <pre class="break-words break-all m-0 rounded-none"><slot></slot></pre>
-    </div>
-    <slot name="after" />
-  </Card>
+    </main>
+    <!-- <footer class="flex flex-row justify-between p-2"></footer> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
+
+.border-color{
+  @apply border-gray-300 dark:border-gray-700;
+}
+
+.container {
+  @apply flex flex-col rounded-lg border border-color overflow-hidden my-3;
+}
 pre code .line {
   white-space: pre-wrap;
 }
-.prose-pre {
-  // --card-border: 1px solid rgba(35, 51, 74, 0.8);
 
-  display: flex;
-  flex-direction: column;
-  color: white;
-  border-radius: 8px;
-}
 .code-content {
 }
-.title-container {
+header {
   @apply flex flex-row justify-between items-center p-4 gap-4;
 }
 .title-left {
-  @apply flex gap-4 flex-row;
+  @apply flex gap-4 flex-row items-center;
 }
 .title-right {
   display: flex;

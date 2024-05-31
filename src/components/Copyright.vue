@@ -6,3 +6,12 @@
     </p>
   </section>
 </template>
+
+<style>
+.copyright a {
+  @apply no-underline;
+}
+.copyright a:hover {
+  @apply underline;
+}
+</style>

@@ -16,18 +16,22 @@ const toggleTheme = () => {
 </script>
 
 <template>
-  <header class="app-header">
-    <Logo />
-    <AppNav />
-    <section class="flex flex-row gap-3 header-extra">
-      <a>login</a>
-
-      <ClientOnly>
-        <a href="/_tailwind" target="_blank">Tailwind</a>
-        
-      </ClientOnly>
-      <ThemeMode />
-    </section>
+  <header
+    class="app-header flex flex-col sticky top-0 border-b border-gray-300 z-50 backdrop-blur-8 dark:border-gray-600"
+  >
+    <main
+      class="max-w-screen-xl mx-auto w-full flex flex-row items-center px-4 box-border"
+    >
+      <Logo />
+      <AppNav class="flex flex-1 justify-center" />
+      <section class="flex flex-row gap-3 header-extra">
+        <ClientOnly>
+          <a href="/_tailwind" target="_blank">Tailwind</a>
+        </ClientOnly>
+        <ThemeMode />
+        <a>login</a>
+      </section>
+    </main>
   </header>
   <!-- <slot></slot> -->
 </template>
@@ -37,25 +41,7 @@ const toggleTheme = () => {
   backdrop-filter: blur(8px);
 }
 .app-header {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid rgb(35, 42, 35);
-  margin: auto;
-  padding: 12px 24px;
-  background-color: rgba(0, 0, 0, 0.565);
-  
-  z-index: 999; */
-
-  @apply flex flex-row top-0 sticky border-b border-gray-300 z-50 backdrop-blur-8 justify-between items-center  px-3;
-}
-.app-header::after {
-  content: '';
-  position: absolute;
-  filter: blur(12px);
+  @apply flex;
 }
 
 .app-main {

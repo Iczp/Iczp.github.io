@@ -15,12 +15,12 @@ const toggleColorMode = () => {
     <NightMode v-else />
   </button>
 
-  <ColorScheme placeholder="..." tag="div">
+  <!-- <ColorScheme placeholder="..." tag="div">
     <div @click="toggleColorMode">
       Color mode: <b>{{ $colorMode.preference }}</b>
       <span v-if="$colorMode.preference === 'system'"
         >(<i>{{ $colorMode.value }}</i> mode detected)
       </span>
     </div>
-  </ColorScheme>
+  </ColorScheme> -->
 </template>

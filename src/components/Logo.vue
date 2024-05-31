@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <section class="logo-container">
+  <section class="logo-container flex-shrink-0">
     <NuxtLink to="/">
       <div class="logo"></div>
       <div class="logo-content">

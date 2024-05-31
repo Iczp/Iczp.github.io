@@ -404,7 +404,7 @@ module.exports = {
       - 可以在配置文件中配置快捷方式
       - ~= 是一种 CSS 属性选择器，它用来选择具有指定属性和值的元素，其中值是一个由空格分隔的列表，且列表中包含指定的值。
 
-```haskell
+```ts
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -612,7 +612,7 @@ module.exports = {
 - All of Tailwind’s modifiers are available to use with your own custom classes as long as you’ve defined them in one of Tailwind’s layers or added them using a plugin:
   - 所有修饰符都可以和自定义类一起使用
 
-```kotlin
+```ts
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -693,7 +693,7 @@ module.exports = {
 - If you need to use a one-off breakpoint that doesn’t make sense to include in your theme, use the min or max modifiers to generate a custom breakpoint on the fly using any arbitrary value.
   - 可以使用[]自定义断点
 
-```cpp
+```html
 <div class="min-[320px]:text-center max-[600px]:bg-sky-300">
 ```
 
@@ -706,7 +706,7 @@ module.exports = {
   - 'class'表示使用类（class）策略来切换暗黑模式，也就是说，当HTML元素上存在dark类时，就会启用暗黑模式。
   - '[data-mode="dark"]'表示使用自定义的属性选择器来切换暗黑模式，也就是说，当HTML元素上存在data-mode="dark"属性时，就会启用暗黑模式。
 
-```haskell
+```ts
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class', '[data-mode="dark"]'],
@@ -776,14 +776,14 @@ module.exports = {
 - When you find yourself really needing something like top: 117px to get a background image in just the right spot, use Tailwind’s square bracket notation to generate a class on the fly with any arbitrary value:
   - 可以使用 [] 来突破 Tailwind 给出的限定值
 
-```cpp
+```html
 <div class="top-[117px]">
 ```
 
 - This is basically like inline styles, with the major benefit that you can combine it with interactive modifiers like hover and responsive modifiers like lg:
   - [] 可以和装饰符一起实用
 
-```cpp
+```html
 <div class="before:content-['Festivus'] lg:top-[344px]">
 ```
 
@@ -793,14 +793,14 @@ module.exports = {
     - 这意味着盒子会使用可用的空间，但永远不会超过max-content。
     - 当fit-content用于设置元素的width、height、min-width、min-height、max-width和max-height时，最大和最小尺寸将基于元素的内容尺寸计算
 
-```cpp
+```html
 <div class="grid grid-cols-[fit-content(theme(spacing.32))]">
 ```
 
 - When using a CSS variable as an arbitrary value, wrapping your variable in var(...) isn’t needed — just providing the actual variable name is enough:
   - 当使用 css 原生变量时不需要使用 var() 包裹，只需要直接使用变量名
 
-```cpp
+```html
 <div class="bg-[--my-color]">
 ```
 
@@ -815,14 +815,14 @@ module.exports = {
     - div 元素必须有一个 mask-image 属性，用于指定遮罩图片的路径。`mask-image: url(masks.svg#star);`
     - 遮罩图片必须是一个 SVG 图形，且包含一个 id 属性，用于在 mask-image 中引用。
 
-```cpp
+```html
 <div class="[mask-type:luminance] hover:[mask-type:alpha]">
 ```
 
 - This can be useful for things like CSS variables as well, especially when they need to change under different conditions:
   - 还可以用来修改css原生变量的值
 
-```cpp
+```html
 <div class="[--scroll-offset:56px] lg:[--scroll-offset:44px]">
 ```
 
@@ -836,14 +836,14 @@ module.exports = {
 - In situations where underscores are common but spaces are invalid, Tailwind will preserve the underscore instead of converting it to a space, for example in URLs:
   - 在[]中并不是所有_都表示空格，在 空格 无效的情况下_保持原样，例如在url()中
 
-```cpp
+```html
 <div class="bg-[url('/what_a_rush.png')]">
 ```
 
 - In the rare case that you actually need to use an underscore but it’s ambiguous because a space is valid as well, escape the underscore with a backslash and Tailwind won’t convert it to a space:
   - 当明确不转换_为空格的地方可以使用\标识
 
-```cpp
+```html
 <div class="before:content-['hello\_world']">
 ```
 
