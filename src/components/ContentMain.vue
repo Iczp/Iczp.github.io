@@ -4,7 +4,7 @@
     <ContentDoc>
       <template v-slot="{ doc }">
         <article
-          class="w-full space-y-12 prose prose-dark prose-a:no-underline hover:prose-a:underline dark:prose-invert"
+          class="w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline hover:prose-a:underline dark:prose-invert"
         >
           <ContentRenderer :value="doc" />
         </article>
@@ -18,3 +18,9 @@
     </ContentDoc>
   </main>
 </template>
+
+<style lang="scss" scoped>
+// .article {
+//   @apply w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline  hover:prose-a:underline dark:prose-invert;
+// }
+</style>
