@@ -24,17 +24,25 @@ const { items } = useTrees({
 
 <template>
   <div class="page-toc">
-    <h2>Table of Contents</h2>
-
+    <h2 class="pb-2">Table of Contents</h2>
     <Trees :items="items">
-      <template v-slot="{ item, depth, index, parents }">
+      <template v-slot="{ item, depth, index, parents, row }">
         <h3
           class="flex flex-row justify-between items-center py-1"
           @click="scrollTo(item)"
         >
-          <div class="flex flex-row items-center">
-            <Anchor class="text-base mx-1.5" />
-            <a :href="navToLink(item)">
+          <div class="flex flex-row items-center max-w-64 overflow-hidden">
+            <!-- {{ item.$row }} -->
+            <div>
+              <ListAlt v-if="item.$row == 1" class="text-base mx-1.5" />
+              <Anchor v-else class="text-base mx-1.5" />
+            </div>
+
+            <a
+              :href="`#${item.id}`"
+              class="truncate text-ellipsis cursor-pointer"
+            >
+            <!-- {{ item }} -->
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.text }}
             </a>

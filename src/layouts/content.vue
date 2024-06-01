@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main class="flex flex-row gap-6 notes my-8">
+  <main class="flex flex-row gap-8 notes my-8">
     <ContentSilder class="w-72" />
     <ContentMain class="flex-1" />
   </main>
