@@ -10,23 +10,29 @@ const { data: navigation } = await useAsyncData('navigation', () =>
 const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
   useContentHelpers();
 
-const dir = navDirFromPath(route.path, navigation.value);
+// const dir = navDirFromPath(route.path, navigation.value);
+
+const { items, toggleOpen } = useTrees({
+  items: navigation.value![0]?.children,
+});
 </script>
 
 <template>
   <div class="page-toc">
-    <h2>Table of Contents </h2>
+    <h2>Table of Contents</h2>
 
-    <Trees :items="navigation[0].children">
-      <template v-slot="{ item, depth, index }">
+    <Trees :items="items">
+      <template v-slot="{ item, depth, index, parents }">
         <h3 class="flex flex-row justify-between items-center h-8">
           <a :href="navBottomLink(item)">
             <ContentCopy :content="item.path" class="mr-1" />
-            {{ depth }}.{{ index }} {{ item.title }}
+            {{ item.$row }} /{{ depth }}.{{ index }} {{ item.title }}
           </a>
-          <span>
+          <span
+            v-if="item?.children && Number(item?.children.length) > 0"
+            @click="toggleOpen(item)"
+          >
             <ArrowRight />
-            <!-- <ArrowDown /> -->
           </span>
         </h3>
       </template>

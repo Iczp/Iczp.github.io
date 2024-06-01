@@ -14,20 +14,19 @@ withDefaults(
 
 <template>
   <ul class="trees" :depth="depth">
-    <li
-      v-for="(item, index) in items"
-      :index="index"
-      :key="index"
-      class=""
-    >
-      <div class="div" :class="{ active: index == 3 }">
-        <slot :item="item" :depth="depth" :index="index" :parents="parents">{{
-          item.title
-        }}</slot>
+    <li v-for="(item, index) in items" :index="index" :key="index" class="">
+      <div class="div" :class="{ active: item.$isActive }">
+        <slot :item="item" :depth="depth" :index="index" :parents="parents">
+          {{ item.title }}
+        </slot>
       </div>
 
       <Trees
-        v-if="Array.isArray(item.children) && item.children.length != 0"
+        v-if="
+          (!!item?.$isOpen) &&
+          Array.isArray(item.children) &&
+          item.children.length != 0
+        "
         :items="item.children"
         :depth="depth + 1"
         :parents="[item, ...parents]"
@@ -73,7 +72,7 @@ withDefaults(
 }
 
 ul {
-  @apply  border-l border-l pl-8;
+  @apply border-l border-l pl-8;
 }
 
 ul[depth='0'] > li:only-child > .div {
@@ -87,8 +86,9 @@ ul[depth='0'] {
 }
 
 .div {
-  @apply relative pl-4 ;
+  @apply relative pl-4;
 }
+
 .div::before {
   content: '';
   @apply border-l top-0 bottom-0 absolute left-0  z-20;
@@ -116,9 +116,8 @@ ul,
   @apply border-color box-border;
 }
 
-.div:hover::before{
-    
-    border: var(--trees-border-color) 1px var(--border-style);
+.div:hover::before {
+  border: var(--trees-border-color) 1px var(--border-style);
 }
 .div:hover::before,
 .div:hover::after {
