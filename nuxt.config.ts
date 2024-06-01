@@ -1,5 +1,6 @@
 import { generateCss } from './src/hooks/antd';
 import { resolve } from 'path';
+import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -100,6 +101,9 @@ export default defineNuxtConfig({
   ],
 
   content: {
+    navigation: {
+      fields: ['author', 'creation_time'],
+    },
     experimental: {
       clientDB: true,
       search: {},
@@ -182,7 +186,7 @@ export default defineNuxtConfig({
     viewer: true,
   },
   colorMode: {
-    preference: 'system', // system | light | dark, default value of $colorMode.preference 
+    preference: 'system', // system | light | dark, default value of $colorMode.preference
     fallback: '', // fallback value if not system preference found
     hid: 'nuxt-color-mode-script',
     globalName: '__NUXT_COLOR_MODE__',

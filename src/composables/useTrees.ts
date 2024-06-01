@@ -14,10 +14,12 @@ export const useTrees = ({
   items,
   open = (item, depth, index, parents) => true,
   active = (item, depth, index, parents) => false,
+  action,
 }: {
   items?: any[] | null;
-  open?: CallbackFn;
-  active?: CallbackFn;
+  open?: (item: any, depth: number, index: number, parents: any[]) => boolean;
+  active?: (item: any, depth: number, index: number, parents: any[]) => boolean;
+  action?: (item: any, depth: number, index: number, parents: any[]) => void;
 }) => {
   let row = 0;
   const formatItems = (
@@ -28,6 +30,7 @@ export const useTrees = ({
     if (!items) return [];
     return items.map((x, i) => {
       row++;
+      action && action(x, depth, i, parents);
       return {
         ...x,
         $row: row,
@@ -40,11 +43,9 @@ export const useTrees = ({
     });
   };
   const refItems = ref(formatItems(items));
-  console.log(items);
-
+  //   console.log(items);
   const toggleOpen = (item: ItemType) => {
-    console.log(item);
-
+    // console.log(item);
     item.$isOpen = !item.$isOpen;
   };
 
