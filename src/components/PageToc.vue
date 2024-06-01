@@ -2,7 +2,7 @@
 import { isDir } from '@/utils/isDir';
 
 import Trees from './Trees.vue';
-withDefaults(
+const props = withDefaults(
   defineProps<{
     items: Array<any>;
   }>(),
@@ -16,6 +16,10 @@ const { toc } = useContent();
 const navToLink = (item: any) => (!isDir(item) ? item._path : undefined);
 
 const scrollTo = (item: any) => (!isDir(item) ? item._path : undefined);
+
+const { items } = useTrees({
+  items: props.items,
+});
 </script>
 
 <template>

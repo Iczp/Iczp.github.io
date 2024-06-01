@@ -1,6 +1,6 @@
 import { generateCss } from './src/hooks/antd';
 import { resolve } from 'path';
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -116,6 +116,12 @@ export default defineNuxtConfig({
       page: false, // Keep page fetching enabled
       surround: true, // Disable surround fetching
     },
+    markdown: {
+      toc: {
+        depth: 6,
+        searchDepth: 6,
+      },
+    },
     sources: {
       content: {
         driver: 'fs',
@@ -156,11 +162,6 @@ export default defineNuxtConfig({
         'vue',
       ],
     },
-    // markdown: {
-    //   toc: {
-    //     includeLevel: [2, 3],
-    //   },
-    // },
   },
   antd: {
     // components: ['Tabs', 'TabsPance', 'Message', 'Notification', 'Button'],

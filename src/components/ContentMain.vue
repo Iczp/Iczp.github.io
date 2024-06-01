@@ -20,11 +20,18 @@ const {
 const { data } = await useAsyncData('home', () =>
   queryContent(route.path).findOne()
 );
+
+const tocItems = [
+  {
+    text: 'Table of contents',
+    children: data.value?.body?.toc?.links,
+  },
+];
 </script>
 
 <template>
   <main class="flex flex-col">
-    <PageToc :items="data?.body?.toc?.links" />
+    <PageToc :items="tocItems" />
 
     <!-- toc:{{ toc }} page:{{ page }}
 
