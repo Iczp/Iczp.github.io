@@ -12,10 +12,10 @@ export default defineNitroPlugin((nitroApp) => {
     // const fileInfo = nitroApp.utils.fileInfo(file._id);
     // file.fileInfo = fileInfo;
     // const fileExt = nitroApp.utils.fileExtension(file._id);
-    console.log('file:', file);
-    console.log('file._path:', file._path);
-    file.info = useFileStats(join('../', file._id.replace(':', '/')));
-    console.log('file:', file);
+    // console.log('file:', file);
+    const filePath = join('../', file._id.replace(':', '/'))
+    file.info = useFileStats(filePath);
+    // console.log('file:', file);
   });
   //   nitroApp.nuxtApp
   //   const appConfig = useAppConfig();
