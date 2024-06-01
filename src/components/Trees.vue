@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Trees from './Trees.vue';
 withDefaults(
   defineProps<{
     items: Array<any>;
@@ -23,7 +24,7 @@ withDefaults(
 
       <Trees
         v-if="
-          (!!item?.$isOpen) &&
+          !!item?.$isOpen &&
           Array.isArray(item.children) &&
           item.children.length != 0
         "

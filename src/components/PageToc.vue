@@ -13,7 +13,7 @@ const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
 // const dir = navDirFromPath(route.path, navigation.value);
 
 const { items, toggleOpen } = useTrees({
-  items: navigation.value![0]?.children,
+  items: navigation.value, //![0]?.children,
 });
 </script>
 
@@ -32,7 +32,7 @@ const { items, toggleOpen } = useTrees({
             v-if="item?.children && Number(item?.children.length) > 0"
             @click="toggleOpen(item)"
           >
-            <ArrowRight />
+            <Arrow :dir="item.$isOpen ? 'down' : 'right'" />
           </span>
         </h3>
       </template>

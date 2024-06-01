@@ -1,17 +1,23 @@
 export type ItemType = {
   // id: number;
-  $isOpen: boolean;
-  $isActive: boolean;
+  $isOpen?: boolean;
+  $isActive?: boolean;
   children?: ItemType[];
 };
+export type CallbackFn = (
+  item: any,
+  depth: number,
+  index: number,
+  parents: any[]
+) => boolean;
 export const useTrees = ({
   items,
   open = (item, depth, index, parents) => true,
   active = (item, depth, index, parents) => false,
 }: {
   items?: any[] | null;
-  open?: (item: any, depth: number, index: number, parents: any[]) => boolean;
-  active?: (item: any, depth: number, index: number, parents: any[]) => boolean;
+  open?: CallbackFn;
+  active?: CallbackFn;
 }) => {
   let row = 0;
   const formatItems = (
