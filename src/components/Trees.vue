@@ -14,7 +14,12 @@ withDefaults(
 
 <template>
   <ul class="trees" :depth="depth">
-    <li v-for="(item, index) in items" :index="index" :key="index" class="flex flex-col">
+    <li
+      v-for="(item, index) in items"
+      :index="index"
+      :key="index"
+      class=""
+    >
       <div class="div" :class="{ active: index == 3 }">
         <slot :item="item" :depth="depth" :index="index" :parents="parents">{{
           item.title
@@ -68,10 +73,8 @@ withDefaults(
 }
 
 ul {
-  @apply flex flex-col border-l border-l pl-8;
+  @apply  border-l border-l pl-8;
 }
-
-
 
 ul[depth='0'] > li:only-child > .div {
   @apply pl-0;
@@ -84,11 +87,11 @@ ul[depth='0'] {
 }
 
 .div {
-  @apply relative pl-6 flex flex-col;
+  @apply relative pl-4 ;
 }
 .div::before {
   content: '';
-  @apply border-l border-l top-0 bottom-0 absolute left-0 z-20;
+  @apply border-l top-0 bottom-0 absolute left-0  z-20;
 }
 li:last-child > .div::before {
   @apply h-1/2;
@@ -100,7 +103,7 @@ li:last-child > ul {
 }
 .div::after {
   content: '';
-  @apply border-t border-t top-1/2 bottom-0 absolute left-0 h-0.5 w-4 z-10;
+  @apply border-t top-1/2 bottom-0 absolute left-0 h-0.5 w-4 z-10;
 }
 
 ul[depth='0'] > li[index='0'] > .div::before {
@@ -110,9 +113,13 @@ ul[depth='0'] > li[index='0'] > .div::before {
 ul,
 .div::before,
 .div::after {
-  @apply border-color;
+  @apply border-color box-border;
 }
 
+.div:hover::before{
+    
+    border: var(--trees-border-color) 1px var(--border-style);
+}
 .div:hover::before,
 .div:hover::after {
   @apply hover-color;

@@ -15,9 +15,9 @@ const dir = navDirFromPath(route.path, navigation.value);
 
 <template>
   <div class="page-toc">
-    <h2>Table of Contents [0].children</h2>
+    <h2>Table of Contents </h2>
 
-    <Trees :items="navigation">
+    <Trees :items="navigation[0].children">
       <template v-slot="{ item, depth, index }">
         <h3 class="flex flex-row justify-between items-center h-8">
           <a :href="navBottomLink(item)">
