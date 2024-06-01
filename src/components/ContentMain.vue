@@ -15,15 +15,31 @@ const {
   prev,
 } = useContent();
 
-console.log('content');
+// console.log('content');
+
+const { data } = await useAsyncData('home', () =>
+  queryContent(route.path).findOne()
+);
 </script>
 
 <template>
   <main class="flex flex-col">
-    <!-- <PageToc /> -->
+    <PageToc :items="data?.body?.toc?.links" />
 
-    toc:{{ toc }} page:{{ page }}
+    <!-- toc:{{ toc }} page:{{ page }}
 
+    data:{{ data }} -->
+
+    <main>
+      <ContentQuery :path="$route.path" find="one" v-slot="{ data }">
+        <pre>
+          <!-- {{  data }} -->
+        <!-- <ContentRenderer :value="data" /> -->
+      </pre>
+      </ContentQuery>
+    </main>
+
+    ----------------
     <ContentDoc :excerpt="true">
       <template v-slot="{ doc }">
         <article
@@ -41,12 +57,12 @@ console.log('content');
     </ContentDoc>
 
     <div class="flex flex-row justify-between gap-2">
-      <div class="flex flex-1 border border-sky-100 p-4">
+      <UCard class="flex flex-1">
         <NuxtLink v-if="prev" :to="prev._path">{{ prev.title }}</NuxtLink>
-      </div>
-      <div class="flex flex-1 border border-sky-100 justify-end p-4">
+      </UCard>
+      <UCard class="flex flex-1 justify-end">
         <NuxtLink v-if="next" :to="next._path">{{ next.title }}</NuxtLink>
-      </div>
+      </UCard>
     </div>
   </main>
 </template>
