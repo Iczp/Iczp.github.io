@@ -40,9 +40,13 @@ console.log('content');
       </template>
     </ContentDoc>
 
-    <div>
-      <NuxtLink v-if="prev" :to="prev._path">{{ prev.title }}</NuxtLink>
-      <NuxtLink v-if="next" :to="next._path">{{ next.title }}</NuxtLink>
+    <div class="flex flex-row justify-between gap-2">
+      <div class="flex flex-1 border border-sky-100 p-4">
+        <NuxtLink v-if="prev" :to="prev._path">{{ prev.title }}</NuxtLink>
+      </div>
+      <div class="flex flex-1 border border-sky-100 justify-end p-4">
+        <NuxtLink v-if="next" :to="next._path">{{ next.title }}</NuxtLink>
+      </div>
     </div>
   </main>
 </template>
