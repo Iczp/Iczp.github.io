@@ -83,7 +83,7 @@ const setctions = ref([
 </script>
 
 <template>
-  <footer class="app-footer flex flex-col mx-auto max-w-screen-xl box-border">
+  <footer class="app-footer flex flex-col mx-auto box-border">
     <UCard class="p-0">
       <main
         class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 border-dark-300"

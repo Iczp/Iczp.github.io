@@ -22,16 +22,16 @@ const navClick = (item: any) => {
 </script>
 
 <template>
-  <Trees :items="items">
+  <Trees :items="items" class="max-w-72">
     <template v-slot="{ item, depth, index, parents }">
       <h3
-        class="flex flex-row justify-between py-1"
+        class="flex flex-row justify-between py-1 gap-2 cursor-pointer"
         :class="{ dir: item.$isDir }"
         @click="toggleOpen(item)"
       >
-        <section class="flex flex-row items-center max-w-48 overflow-hidden">
+        <section class="flex flex-row items-center overflow-hidden">
           <div class="px-1.5 text-lg">
-            <Folder v-if="item.$isDir" />
+            <Dir v-if="item.$isDir" :open="item.$isOpen" />
             <File v-else />
           </div>
           <p class="truncate text-ellipsis">

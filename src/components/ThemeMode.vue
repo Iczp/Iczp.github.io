@@ -10,10 +10,12 @@ const toggleColorMode = () => {
 </script>
 
 <template>
+  <!-- <ClientOnly> -->
   <button @click="toggleDark()">
     <LightMode v-if="isDark" />
     <NightMode v-else />
   </button>
+  <!-- </ClientOnly> -->
 
   <!-- <ColorScheme placeholder="..." tag="div">
     <div @click="toggleColorMode">

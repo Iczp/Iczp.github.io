@@ -106,7 +106,9 @@ export default defineNuxtConfig({
     },
     experimental: {
       clientDB: true,
-      search: {},
+      search: {
+        indexed: false
+      }
     },
     api: {
       baseURL: '/api/content',
