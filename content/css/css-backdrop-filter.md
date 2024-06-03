@@ -17,3 +17,18 @@
   backdrop-filter: blur(8px);
 }
 ```
+
+## TailwindCSS
+
+> backdrop-blur-\* 
+> 
+> >  `backdrop-blur-md` `backdrop-blur-lg` `backdrop-blur-xl`
+
+
+### 代码
+
+```css
+<div class="backdrop-blur-md">
+...
+</div>
+```

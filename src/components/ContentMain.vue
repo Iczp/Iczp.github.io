@@ -64,7 +64,7 @@ const tocItems = [
           <span class="arrow">
             <Icon name="ic:outline-arrow-back" />
           </span>
-          <h3 class="text-lg">
+          <h3 class="text-lg line-clamp-2">
             {{ prev.title }}
           </h3>
           <p v-if="prev.description">{{ prev.description }}</p>
@@ -75,7 +75,7 @@ const tocItems = [
           <span class="arrow">
             <Icon name="ic:outline-arrow-forward" />
           </span>
-          <h3 class="text-lg">
+          <h3 class="text-lg line-clamp-2">
             {{ next.title }}
           </h3>
           <p v-if="next.description">{{ next.description }}</p>

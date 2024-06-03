@@ -30,6 +30,8 @@ const toggleTheme = () => {
         </ClientOnly>
         <ThemeMode />
         <a>login</a>
+
+        <LinkGithub href="https://github.com/iczp">GitHub</LinkGithub>
       </section>
     </main>
   </header>

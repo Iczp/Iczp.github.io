@@ -25,7 +25,7 @@ const navClick = (item: any) => {
   <Trees :items="items" class="max-w-72">
     <template v-slot="{ item, depth, index, parents }">
       <h3
-        class="flex flex-row justify-between py-1 gap-2 cursor-pointer"
+        class="flex flex-row justify-between py-1 gap-2"
         :class="{ dir: item.$isDir }"
         @click="toggleOpen(item)"
       >
@@ -35,7 +35,11 @@ const navClick = (item: any) => {
             <File v-else />
           </div>
           <p class="truncate">
-            <a :href="navToLink(item)" @click="navClick(item)">
+            <a
+              :href="navToLink(item)"
+              @click="navClick(item)"
+              class="cursor-pointer"
+            >
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.title }}
             </a>
