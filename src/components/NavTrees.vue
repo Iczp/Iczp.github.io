@@ -34,7 +34,7 @@ const navClick = (item: any) => {
             <Dir v-if="item.$isDir" :open="item.$isOpen" />
             <File v-else />
           </div>
-          <p class="truncate text-ellipsis">
+          <p class="truncate">
             <a :href="navToLink(item)" @click="navClick(item)">
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.title }}

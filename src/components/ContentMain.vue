@@ -30,11 +30,13 @@ const tocItems = [
 </script>
 
 <template>
-  <main class="flex flex-row-reverse">
-    <section class="fixed z-10">
+  <main class="flex relative flex-col sm:flex-row-reverse">
+    <section class="z-10 sm:fixed">
       <!-- page:
     <pre>{{ toc }}</pre> -->
-      <UCard class="bg-transparent dark:bg-transparent backdrop-blur-lg  shadow-md drak:shadow-white">
+      <UCard
+        class="bg-transparent dark:bg-transparent backdrop-blur-lg shadow-md drak:shadow-white mb-8 sm:mb-0"
+      >
         <PageToc :items="tocItems" />
       </UCard>
     </section>
@@ -56,13 +58,13 @@ const tocItems = [
         </template>
       </ContentDoc>
 
-      <div class="flex flex-col justify-between gap-2 sm:flex-row mt-4">
+      <div class="flex flex-col justify-between gap-4 sm:flex-row mt-4">
         <!-- <UCard v-if="prev" class="flex flex-1"> -->
         <NuxtLink v-if="prev" :to="prev._path" class="page-item">
           <span class="arrow">
             <Icon name="ic:outline-arrow-back" />
           </span>
-          <h3 class="text-xl">
+          <h3 class="text-lg">
             {{ prev.title }}
           </h3>
           <p v-if="prev.description">{{ prev.description }}</p>
@@ -73,7 +75,7 @@ const tocItems = [
           <span class="arrow">
             <Icon name="ic:outline-arrow-forward" />
           </span>
-          <h3 class="text-xl">
+          <h3 class="text-lg">
             {{ next.title }}
           </h3>
           <p v-if="next.description">{{ next.description }}</p>
@@ -81,28 +83,7 @@ const tocItems = [
         <!-- </UCard> -->
       </div>
 
-      <!-- <ul class="flex flex-row justify-between gap-2">
-        <li
-          v-for="(page, index) in pages"
-          class="flex flex-1"
-          :class="{ 'justify-end': index == 1 }"
-        >
-          <NuxtLink :to="next._path">
-            <Icon
-              :name="
-                index == 0
-                  ? 'ic:outline-arrow-back'
-                  : 'ic:outline-arrow-forward'
-              "
-            />
-            <h3>
-              555{{ page.title }}
-              {{ page.title }}
-            </h3>
-            <p>{{ page.description }}</p>
-          </NuxtLink>
-        </li>
-      </ul> -->
+      
     </section>
   </main>
 </template>
@@ -120,9 +101,9 @@ const tocItems = [
 }
 
 .page-item:hover .arrow {
-  @apply bg-green-700;
+  @apply bg-green-100 dark:bg-green-700;
 }
 .arrow {
-  @apply rounded-full border flex w-8 h-8 flex-col justify-center items-center  dark:text-primary-400 bg-gray-700 mr-2 mb-2;
+  @apply rounded-full border flex w-8 h-8 flex-col justify-center items-center border-gray-200  dark:border-gray-600 dark:text-primary-400 bg-gray-200 mr-2 mb-2 dark:bg-gray-700;
 }
 </style>

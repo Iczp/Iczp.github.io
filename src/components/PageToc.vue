@@ -20,18 +20,26 @@ const scrollTo = (item: any) => (!isDir(item) ? item._path : undefined);
 const { items } = useTrees({
   items: props.items,
 });
+const isOpen = ref(true);
+
+const toggleOpen = () => {
+  isOpen.value = !isOpen.value;
+};
 </script>
 
 <template>
   <div class="page-toc">
-    <h2 class="pb-2">Table of Contents</h2>
-    <Trees :items="items">
+    <h2 class="flex flex-row justify-between items-center  gap-4 sm:max-w-64" @click="toggleOpen">
+      <span class="truncate text-ellipsis"> Table of Contents</span>
+      <Arrow :dir="isOpen ? 'down' : 'right'" class="ml-1" />
+    </h2>
+    <Trees v-if="isOpen" :items="items" class="mt-2 sm:max-w-64">
       <template v-slot="{ item, depth, index, parents, row }">
         <h3
           class="flex flex-row justify-between items-center py-1"
           @click="scrollTo(item)"
         >
-          <div class="flex flex-row items-center max-w-64 overflow-hidden">
+          <div class="flex flex-row items-center overflow-hidden">
             <!-- {{ item.$row }} -->
             <div>
               <ListAlt v-if="item.$row == 1" class="text-base mx-1.5" />
@@ -40,9 +48,9 @@ const { items } = useTrees({
 
             <a
               :href="`#${item.id}`"
-              class="truncate text-ellipsis cursor-pointer"
+              class="truncate cursor-pointer"
             >
-            <!-- {{ item }} -->
+              <!-- {{ item }} -->
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.text }}
             </a>

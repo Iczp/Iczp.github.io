@@ -83,7 +83,7 @@ ul[depth='0'] > li:only-child > ul {
   @apply pl-4;
 }
 ul[depth='0'] {
-  @apply p-0 m-0;
+  @apply p-0 mx-0;
 }
 
 .div {
