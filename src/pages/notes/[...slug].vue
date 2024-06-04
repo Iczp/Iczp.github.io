@@ -3,9 +3,9 @@
 //   fetchContentNavigation()
 // );
 
-definePageMeta({
-  layout: false,
-});
+// definePageMeta({
+//   layout: true,
+// });
 
 // const contentConfig = $content.config
 // console.log(contentConfig)

@@ -41,7 +41,7 @@ export const useAppNav = () => {
   );
 
   if (current.value == -1) {
-    console.log('route.path', route.path);
+    // console.log('route.path', route.path);
 
     current.value = 0;
   }
