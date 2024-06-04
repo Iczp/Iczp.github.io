@@ -1,6 +1,20 @@
+<script lang="ts" setup>
+// const { scrollToAnchor, scrollToTop } = useAnchorScroll({
+//   toTop: {
+//     scrollOptions: {
+//       behavior: 'smooth',
+//       offsetTop: 0,
+//     },
+//   },
+// });
+
+const scrollToTop = () => {}
+</script>
+
 <template>
   <div
     class="align-top sticky bottom-8 right-8 border border-green-800 rounded-full text-xl w-12 h-12 flex justify-center items-center shadow-green-600 self-end bg-green-600 bg-opacity-20 hover:bg-opacity-40 hover:bg-green-700"
+    @click="scrollToTop"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,13 +26,6 @@
     </svg>
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  name: 'IcBaselineVerticalAlignTop',
-};
-
-</script>
 
 <style scoped>
 .align-top {

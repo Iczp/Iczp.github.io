@@ -98,6 +98,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    // 'nuxt-anchorscroll',
   ],
 
   content: {
@@ -163,6 +164,7 @@ export default defineNuxtConfig({
         'yaml',
         'vue',
         'csharp',
+        'c#',
         'xml',
       ],
     },
@@ -205,4 +207,11 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml'],
     },
   },
+  // anchorscroll: {
+  //   hooks: [
+  //     // Or any valid hook if needed
+  //     // Default is `page:finish`
+  //     'page:transition:finish',
+  //   ],
+  // },
 });

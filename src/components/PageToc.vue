@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { isDir } from '@/utils/isDir';
-
 import Trees from './Trees.vue';
 const props = withDefaults(
   defineProps<{
@@ -11,6 +10,14 @@ const props = withDefaults(
   }
 );
 
+// const { scrollToAnchor, scrollToTop } = useAnchorScroll({
+//   toTop: {
+//     scrollOptions: {
+//       behavior: 'smooth',
+//       offsetTop: 0,
+//     },
+//   },
+// });
 const { toc } = useContent();
 
 const navToLink = (item: any) => (!isDir(item) ? item._path : undefined);
@@ -29,7 +36,10 @@ const toggleOpen = () => {
 
 <template>
   <div class="page-toc">
-    <h2 class="flex flex-row justify-between items-center  gap-4 sm:max-w-64" @click="toggleOpen">
+    <h2
+      class="flex flex-row justify-between items-center gap-4 sm:max-w-64"
+      @click="toggleOpen"
+    >
       <span class="truncate text-ellipsis"> Table of Contents</span>
       <Arrow :dir="isOpen ? 'down' : 'right'" class="ml-1" />
     </h2>
@@ -46,10 +56,7 @@ const toggleOpen = () => {
               <Anchor v-else class="text-base mx-1.5" />
             </div>
 
-            <a
-              :href="`#${item.id}`"
-              class="truncate cursor-pointer"
-            >
+            <a :href="`#${item.id}`" class="truncate cursor-pointer">
               <!-- {{ item }} -->
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.text }}

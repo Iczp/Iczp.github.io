@@ -17,10 +17,12 @@ const {
 
 // console.log('content');
 
-const { data } = await useAsyncData('home', () =>
+const { data } = await useAsyncData('detail', () =>
   queryContent(route.path).findOne()
 );
 
+const tags = ref(data.value?.tags || []);
+const categories = ref(data.value?.categories || []);
 const tocItems = [
   {
     text: 'Table of contents',
@@ -31,19 +33,21 @@ const tocItems = [
 
 <template>
   <main class="flex relative flex-col sm:flex-row-reverse">
-    <section class="z-10 sm:fixed">
-      <!-- page:
-    <pre>{{ toc }}</pre> -->
+    <!-- <section class="z-10 sm:fixed">
+      page:
+      <pre>{{ data }}</pre>
       <UCard
         class="bg-transparent dark:bg-transparent backdrop-blur-lg shadow-md drak:shadow-white mb-8 sm:mb-0"
       >
         <PageToc :items="tocItems" />
       </UCard>
-    </section>
+    </section> -->
 
     <section class="flex flex-col flex-1">
       <ContentDoc :excerpt="true">
         <template v-slot="{ doc, excerpt }">
+          date: {{ data?.date }} tags: {{ data?.tags }} categories:
+          {{ data?.categories }}
           <article
             class="w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline hover:prose-a:underline dark:prose-dark"
           >
@@ -58,7 +62,31 @@ const tocItems = [
         </template>
       </ContentDoc>
 
-      <AlignTop />  
+      <AlignTop />
+
+      <section class="tags flex flex-row items-center">
+        <h3 class="text-lg mr-2">标签</h3>
+        <ul class="flex flex-row gap-2">
+          <li v-for="tag in tags" :key="tag">
+            <NuxtLink :to="`/tags?tag=${tag}`">
+              {{ tag }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
+
+      <section class="categories flex flex-row items-center">
+        <h3 class="text-lg mr-2">栏目</h3>
+        <ul class="flex flex-row gap-2">
+          <li v-for="category in categories" :key="category">
+            <NuxtLink :to="`/categories?cate=${category}`">
+              {{ category }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
+
+      <!-- <div class="categories flex flex-col gap-4"></div> -->
 
       <div class="flex flex-col justify-between gap-4 sm:flex-row mt-4">
         <!-- <UCard v-if="prev" class="flex flex-1"> -->
@@ -84,8 +112,6 @@ const tocItems = [
         </NuxtLink>
         <!-- </UCard> -->
       </div>
-
-      
     </section>
   </main>
 </template>

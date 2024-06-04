@@ -5,14 +5,20 @@ date: '2024-06-01'
 navigation:
   # title: 'Home'
   icon: '🏡'
+
+tags: ['vue', 'note']
+categories: ['dev', '2024看年']
 ---
 
-
 Learn how to use @nuxt/content.
+
 <!--more-->
+
 Full amount of content beyond the more divider.
 
 # 开发笔记
+
+[nofollow 标签 - ggg](../html/nofollow.md)
 
 > https://www.tailwindcss.cn/docs/installation
 

@@ -18,6 +18,16 @@ export const useAppNav = () => {
       title: 'Notes',
     },
     {
+      key: 'tags',
+      url: '/tags',
+      title: 'Tags',
+    },
+    {
+      key: 'categories',
+      url: '/categories',
+      title: 'Categories',
+    },
+    {
       key: 'about',
       url: '/about',
       title: 'About',
