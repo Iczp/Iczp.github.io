@@ -26,7 +26,7 @@ defineShortcuts({
   <main class="flex flex-col flex-shrink-0 break-words">
     <header>
       <UModal v-model="isOpen">
-        <UCarc> UCard </UCarc>
+        <UCard>UCard</UCard>
       </UModal>
       <UInput
         icon="i-heroicons-magnifying-glass-20-solid"

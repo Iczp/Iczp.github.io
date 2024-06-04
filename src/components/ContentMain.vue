@@ -58,6 +58,8 @@ const tocItems = [
         </template>
       </ContentDoc>
 
+      <AlignTop />  
+
       <div class="flex flex-col justify-between gap-4 sm:flex-row mt-4">
         <!-- <UCard v-if="prev" class="flex flex-1"> -->
         <NuxtLink v-if="prev" :to="prev._path" class="page-item">
