@@ -21,8 +21,20 @@ const { data } = await useAsyncData('detail', () =>
   queryContent(route.path).findOne()
 );
 
-const tags = ref(data.value?.tags || []);
-const categories = ref(data.value?.categories || []);
+const parseArray = (data: any): string[] => {
+  if (!data) {
+    return [];
+  }
+  if (Array.isArray(data)) {
+    return data;
+  }
+  if (typeof data === 'string') {
+    return data.split(/ |,/g).filter((item) => item.trim());
+  }
+  return [data];
+};
+const tags = ref(parseArray(data.value?.tags));
+const categories = ref(parseArray(data.value?.categories));
 const tocItems = [
   {
     text: 'Table of contents',
@@ -33,21 +45,24 @@ const tocItems = [
 
 <template>
   <main class="flex relative flex-col sm:flex-row-reverse">
-    <!-- <section class="z-10 sm:fixed">
-      page:
-      <pre>{{ data }}</pre>
+    <section class="z-10 sm:fixed">
       <UCard
         class="bg-transparent dark:bg-transparent backdrop-blur-lg shadow-md drak:shadow-white mb-8 sm:mb-0"
       >
         <PageToc :items="tocItems" />
       </UCard>
-    </section> -->
+    </section>
 
     <section class="flex flex-col flex-1">
+      <!-- page:
+      <pre>{{ data }}</pre> -->
+      <!-- date: {{ data?.date }} tags: {{ tags }} categories:
+          {{ categories }} -->
       <ContentDoc :excerpt="true">
         <template v-slot="{ doc, excerpt }">
-          date: {{ data?.date }} tags: {{ data?.tags }} categories:
-          {{ data?.categories }}
+          date: {{ data?.date }} tags: {{ tags }} categories:
+          {{ categories }}
+          <!-- {{ doc }} -->
           <article
             class="w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline hover:prose-a:underline dark:prose-dark"
           >

@@ -1,13 +1,13 @@
 ---
 title: '开发笔记'
-date: '2024-06-01'
 
 navigation:
-  # title: 'Home'
   icon: '🏡'
 
 tags: ['vue', 'note']
 categories: ['dev', '2024看年']
+date: '2024-06-01'
+author: '[iczp](../html/nofollow.md)'
 ---
 
 Learn how to use @nuxt/content.
