@@ -14,6 +14,18 @@ const { items, toggleOpen } = useTrees({
     x.$isDir = isDir(x);
   },
   active: (item, depth, index, parents) => item._path === route.path,
+  sort: (a, b, depth) => {
+    if (depth > 1) {
+      return 0; // a和b位置不变
+    }
+    if (a.$isDir && !b.$isDir) {
+      return -1; // a应该在b前面
+    } else if (!a.$isDir && b.$isDir) {
+      return 1; // b应该在a前面
+    } else {
+      return 0; // a和b位置不变
+    }
+  },
 });
 const navToLink = (item: any) => (!isDir(item) ? item._path : undefined);
 const navClick = (item: any) => {
@@ -42,6 +54,9 @@ const navClick = (item: any) => {
             >
               <!-- {{ item.$row }} /{{ depth }}.{{ index }}  -->
               {{ item.title }}
+              <template v-if="item.$isDir">
+                ({{ item.$totalFileCount }})
+              </template>
             </a>
           </p>
         </section>
