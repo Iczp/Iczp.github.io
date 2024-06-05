@@ -13,6 +13,11 @@ export const useAppNav = () => {
       title: 'Links',
     },
     {
+      key: 'docs',
+      url: '/docs',
+      title: 'Docs',
+    },
+    {
       key: 'notes',
       url: '/notes',
       title: 'Notes',

@@ -131,6 +131,11 @@ export default defineNuxtConfig({
         prefix: '/notes', // All contents inside this source will be prefixed with `/notes`
         base: resolve(__dirname, './content'),
       },
+      docs: {
+        driver: 'fs',
+        prefix: '/docs', // All contents inside this source will be prefixed with `/notes`
+        base: resolve(__dirname, './docs'),
+      },
     },
     // contentHead: true,
     highlight: {

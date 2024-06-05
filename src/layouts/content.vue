@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <!-- <ContentNav /> -->
   <main class="flex flex-row gap-8 notes my-8">
     <ContentSilder class="w-72 hidden sm:flex" />
     <ContentMain class="flex-1" />

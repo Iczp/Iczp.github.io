@@ -8,24 +8,32 @@ const { data: navigation } = await useAsyncData('navigation', () =>
 const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
   useContentHelpers();
 
+//one of ['/docs', '/notes']
+const dir = navDirFromPath(
+  route.fullPath.split('/').slice(0, 2).join('/'),
+  navigation.value
+);
+console.log(route.path, dir);
+
 const { items, toggleOpen } = useTrees({
-  items: navigation.value, //![0]?.children,
+  items: dir,
+  // open: (x) => x.open || true,
   action: (x) => {
     x.$isDir = isDir(x);
   },
   active: (item, depth, index, parents) => item._path === route.path,
-  sort: (a, b, depth) => {
-    if (depth > 1) {
-      return 0; // a和b位置不变
-    }
-    if (a.$isDir && !b.$isDir) {
-      return -1; // a应该在b前面
-    } else if (!a.$isDir && b.$isDir) {
-      return 1; // b应该在a前面
-    } else {
-      return 0; // a和b位置不变
-    }
-  },
+  // sort: (a, b, depth) => {
+  //   if (depth > 1) {
+  //     return 0; // a和b位置不变
+  //   }
+  //   if (a.$isDir && !b.$isDir) {
+  //     return -1; // a应该在b前面
+  //   } else if (!a.$isDir && b.$isDir) {
+  //     return 1; // b应该在a前面
+  //   } else {
+  //     return 0; // a和b位置不变
+  //   }
+  // },
 });
 const navToLink = (item: any) => (!isDir(item) ? item._path : undefined);
 const navClick = (item: any) => {
@@ -34,6 +42,8 @@ const navClick = (item: any) => {
 </script>
 
 <template>
+  <!-- dir {{ dir }} -->
+  {{ route.params.slug[0] }}
   <Trees :items="items" class="max-w-72">
     <template v-slot="{ item, depth, index, parents }">
       <h3
@@ -47,8 +57,8 @@ const navClick = (item: any) => {
             <File v-else />
           </div>
           <p class="truncate">
-            <a
-              :href="navToLink(item)"
+            <NuxtLink
+              :to="navToLink(item)"
               @click="navClick(item)"
               class="cursor-pointer"
             >
@@ -57,7 +67,7 @@ const navClick = (item: any) => {
               <template v-if="item.$isDir">
                 ({{ item.$totalFileCount }})
               </template>
-            </a>
+            </NuxtLink>
           </p>
         </section>
         <section v-if="item.$isDir">
