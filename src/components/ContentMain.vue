@@ -33,8 +33,14 @@ const parseArray = (data: any): string[] => {
   }
   return [data];
 };
-const tags = ref(parseArray(data.value?.tags));
-const categories = ref(parseArray(data.value?.categories));
+
+const { items: tags, getInfo: getTag } = await useTags('tags');
+
+const { items: categories, getInfo: getCategory } = await useTags('tags');
+
+const tagItems = ref(parseArray(data.value?.tags));
+const categoryItems = ref(parseArray(data.value?.categories));
+
 const tocItems = [
   {
     text: 'Table of contents',
@@ -82,9 +88,9 @@ const tocItems = [
       <section class="tags flex flex-row items-center">
         <h3 class="text-lg mr-2">标签</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="tag in tags" :key="tag">
-            <NuxtLink :to="`/tags?tag=${tag}`">
-              {{ tag }}
+          <li v-for="item in tagItems" :key="tag">
+            <NuxtLink :to="`/tags/${getTag(item).name}`">
+              {{ getTag(item).title }}
             </NuxtLink>
           </li>
         </ul>
@@ -93,9 +99,9 @@ const tocItems = [
       <section class="categories flex flex-row items-center">
         <h3 class="text-lg mr-2">栏目</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="category in categories" :key="category">
-            <NuxtLink :to="`/categories?cate=${category}`">
-              {{ category }}
+          <li v-for="item in categoryItems" :key="category">
+            <NuxtLink :to="`/categories/${getCategory(item).name}`">
+              {{ getCategory(item).title }}
             </NuxtLink>
           </li>
         </ul>

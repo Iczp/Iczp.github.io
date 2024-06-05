@@ -1,13 +1,31 @@
 title: 'tags'
 items:
-  - title: 'C#'
+  - name: 'csharp'
+    title: 'C#'
     icon: 'fa-csharp'
     description: 'C# '
 
-  - title: 'Java'
+  - name: 'javascript'
+    title: 'Java'
     icon: 'fa-csharp'
     description: 'C# '
 
-  - title: 'C++'
+  - name: 'c++'
+    title: 'C++'
     icon: 'fa-csharp'
     description: 'C# '
+
+  - name: 'vue'
+    title: 'Vue'
+    icon: 'fa-csharp'
+    description: '#vue'
+
+  - name: 'vue2'
+    title: 'Vue2'
+    icon: 'fa-csharp'
+    description: '#vue2'
+
+  - name: 'vue'
+    title: 'Vue3'
+    icon: 'fa-csharp'
+    description: '#vue3'

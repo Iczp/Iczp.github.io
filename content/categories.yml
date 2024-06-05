@@ -1,16 +1,21 @@
 title: 'categories'
 items:
-  - name: 'csharp C#'
+  - name: 'csharp'
     title: 'C#'
     icon: 'fa-csharp'
     description: 'C# '
 
-  - name: 'js javascript'
+  - name: 'js'
     title: 'Javascript'
     icon: 'fa-csharp'
-    description: 'C# '
+    description: 'Javascript'
 
-  - name: 'typescript ts'
+  - name: 'typescript'
+    title: 'Typescript'
+    icon: 'fa-csharp'
+    description: 'C# '
+    
+  - name: 'ts'
     title: 'Typescript'
     icon: 'fa-csharp'
     description: 'C# '
