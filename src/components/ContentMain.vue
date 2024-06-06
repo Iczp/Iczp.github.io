@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { formatTags } from '@/utils/formatTags';
 const route = useRoute();
 const {
   globals,
@@ -21,25 +22,14 @@ const { data } = await useAsyncData('detail', () =>
   queryContent(route.path).findOne()
 );
 
-const parseArray = (data: any): string[] => {
-  if (!data) {
-    return [];
-  }
-  if (Array.isArray(data)) {
-    return data;
-  }
-  if (typeof data === 'string') {
-    return data.split(/ |,/g).filter((item) => item.trim());
-  }
-  return [data];
-};
+
 
 const { items: tags, getInfo: getTag } = await useTags('tags');
 
 const { items: categories, getInfo: getCategory } = await useTags('tags');
 
-const tagItems = ref(parseArray(data.value?.tags));
-const categoryItems = ref(parseArray(data.value?.categories));
+const tagItems = ref(formatTags(data.value?.tags));
+const categoryItems = ref(formatTags(data.value?.categories));
 
 const tocItems = [
   {
@@ -66,8 +56,13 @@ const tocItems = [
           {{ categories }} -->
       <ContentDoc :excerpt="true">
         <template v-slot="{ doc, excerpt }">
-          date: {{ data?.date }} tags: {{ tags }} categories:
-          {{ categories }}
+          <pre>
+
+            date: {{ data?.date }} 
+            <!-- tags: {{ tags }} 
+            categories:
+          {{ categories }} -->
+          </pre>
           <!-- {{ doc }} -->
           <article
             class="w-full space-y-12 prose prose-dark no-underline prose-headings:no-underline prose-a:no-underline hover:prose-a:underline dark:prose-dark"
@@ -88,7 +83,7 @@ const tocItems = [
       <section class="tags flex flex-row items-center">
         <h3 class="text-lg mr-2">标签</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="item in tagItems" :key="tag">
+          <li v-for="item in tagItems" :key="item">
             <NuxtLink :to="`/tags/${getTag(item).name}`">
               {{ getTag(item).title }}
             </NuxtLink>
@@ -99,7 +94,7 @@ const tocItems = [
       <section class="categories flex flex-row items-center">
         <h3 class="text-lg mr-2">栏目</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="item in categoryItems" :key="category">
+          <li v-for="item in categoryItems" :key="item">
             <NuxtLink :to="`/categories/${getCategory(item).name}`">
               {{ getCategory(item).title }}
             </NuxtLink>

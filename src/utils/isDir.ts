@@ -1,1 +1,1 @@
-export const isDir = (item: any) => item?.children && Array.isArray(item?.children) && item?.children.length > 0;
+export const isDir = (item: any) => Array.isArray(item?.children) && item?.children.length > 0;

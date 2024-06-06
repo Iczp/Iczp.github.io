@@ -3,6 +3,7 @@ export type TagInfo = {
   title: string;
   icon?: string;
   description?: string;
+  url?: string;
 };
 
 export const useTags = async (type: 'categories' | 'tags') => {

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation()
-);
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 
 const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
   useContentHelpers();

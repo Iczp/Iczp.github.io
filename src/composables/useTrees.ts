@@ -1,3 +1,5 @@
+import { isDir } from '@/utils/isDir';
+
 export type ItemType = {
   // id: number;
   $isOpen?: boolean;
@@ -30,8 +32,6 @@ export const useTrees = ({
   sort?: (a: any, b: any, depth: number) => number;
 }) => {
   let row = 0;
-
-  const isDir = (item: any) => item.children && item.children.length > 0;
 
   const statItem = (item: ItemType | undefined | null) => {
     if (!item) return;

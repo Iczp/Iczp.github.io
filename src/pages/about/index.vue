@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const pkg = usePkg();
-
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 const depGroups = ref([
   {
     title: '开发依赖(Dev Dependencies)',
@@ -16,6 +16,8 @@ const depGroups = ref([
 <template>
   <main class="flex flex-col gap-4">
     <h1>About:Index</h1>
+    navigation:
+    <pre>{{ navigation }}</pre>
 
     <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <li>

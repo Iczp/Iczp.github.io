@@ -1,18 +1,33 @@
-<script setup lang="ts">
-const route = useRoute();
+<template>
+  <div>
+    <input v-model="query" @input="search" placeholder="Search content..." />
+    <div v-if="loading">Loading...</div>
+    <ul v-if="results.length">
+      <li v-for="result in results" :key="result._path">
+        <NuxtLink :to="result._path">{{ result.title }}</NuxtLink>
+      </li>
+    </ul>
+    <div v-else>No results found</div>
+  </div>
+</template>
 
-const { params, query } = route;
+<script setup lang="ts">
+import { ref } from 'vue'
+// import { useAsyncData } from '#app'
+// import { queryContent } from '@nuxt/content'
+
+const query = ref('')
+const results = ref([])
+const loading = ref(false)
+
+const search = async () => {
+  loading.value = true
+  const { data } = await queryContent().where({ _path: { $contains: query.value } }).fetch()
+  results.value = data
+  loading.value = false
+}
 </script>
 
-<template>
-  <main>
-    <h1>params :{{ params }}</h1>
-    <h1>query :{{ query }}</h1>
-
-    <UAlert
-      icon="i-heroicons-command-line"
-      description="You can add components to your app using the cli."
-      title="Heads up!"
-    />
-  </main>
-</template>
+<style scoped>
+/* 添加您的样式 */
+</style>

@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    payloadExtraction: false, // 取消生成 _payload.js
+    payloadExtraction: true, // 取消生成 _payload.js
   },
   hooks: {
     'build:done': async () => {
@@ -103,20 +103,32 @@ export default defineNuxtConfig({
 
   content: {
     navigation: {
-      fields: ['author', 'creation_time'],
+      fields: ['author', 'date', 'tags', 'categories'],
     },
     experimental: {
+      // stripQueryParameters: true,
+      // advanceQuery: true,
       clientDB: true,
       search: {
-        indexed: false
-      }
+        indexed: true,
+        options: {
+          fields: [
+            'title',
+            'description',
+            'tags',
+            'categories',
+            'author',
+            'date',
+          ],
+        },
+      },
     },
-    api: {
-      baseURL: '/api/content',
-    },
+    // api: {
+    //   baseURL: '/api/content',
+    // },
     // documentDriven: true,
     documentDriven: {
-      page: false, // Keep page fetching enabled
+      page: true, // Keep page fetching enabled
       surround: true, // Disable surround fetching
     },
     markdown: {
