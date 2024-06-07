@@ -4,7 +4,7 @@ const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 );
 
-const { data } = await useAsyncData('home', () => queryContent('/notes/_tags').find());
+const { data } = await useAsyncData('tags:_tags', () => queryContent('/notes/_tags').find());
 
 const depGroups = ref([
   {

@@ -110,7 +110,7 @@ export default defineNuxtConfig({
       // advanceQuery: true,
       clientDB: true,
       search: {
-        indexed: true,
+        indexed: false,
         options: {
           fields: [
             'title',
