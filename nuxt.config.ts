@@ -123,9 +123,9 @@ export default defineNuxtConfig({
         },
       },
     },
-    // api: {
-    //   baseURL: '/api/content',
-    // },
+    api: {
+      baseURL: '/api/content',
+    },
     // documentDriven: true,
     documentDriven: {
       page: true, // Keep page fetching enabled

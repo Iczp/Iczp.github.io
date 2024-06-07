@@ -8,12 +8,14 @@ export type TagInfo = {
 
 export const useTags = async (type: 'categories' | 'tags') => {
   const { data } = await useAsyncData(`tag:${type}`, () =>
-    queryContent(`/notes/_${type}`).find()
+    queryContent(`/notes/_${type}`).findOne()
   );
 
+  const items = data.value?.items||[];
+
   const getInfo = (name: string) => {
-    const item = data.value?.find(
-      (x) => x.name.toLowerCase() === name.toLowerCase()
+    const item = items?.find(
+      (x:any) => x.name.toLowerCase() === name.toLowerCase()
     );
     return (
       item || {
@@ -24,7 +26,7 @@ export const useTags = async (type: 'categories' | 'tags') => {
   };
 
   return {
-    items: data.value,
+    items,
     getInfo,
   };
 };

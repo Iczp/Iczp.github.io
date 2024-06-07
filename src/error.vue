@@ -9,9 +9,11 @@ const handleError = () => {
 </script>
 
 <template>
-  <div>
-    <h2>{{ error.statusCode }}</h2>
+  <div class="m-auto p-8 w-full flex flex-col gap-2">
+    <h1>{{ error.statusCode }}</h1>
+    <h2>{{ error.url }}</h2>
+    <h2>{{ error.message }}</h2>
     <button @click="handleError">返回首页</button>
-    <pre>{{ error }}</pre>
+    <div class="" v-html="error.stack"></div>
   </div>
 </template>

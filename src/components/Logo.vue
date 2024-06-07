@@ -13,7 +13,7 @@
           <span> <strong class="light">V</strong>ue</span>
           <span><strong class="light">L</strong>ink</span>
           <span><strong class="light">L</strong>ab</span>
-          <span> (链接实验室)</span>
+          <span class="hidden"> (链接实验室)</span>
         </p>
       </div>
     </NuxtLink>

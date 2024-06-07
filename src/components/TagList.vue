@@ -16,8 +16,11 @@ const items = list.map((x) => ({
   </pre> -->
 
   <ul>
-    <li v-for="item in items" :key="item.title">
+    <li v-for="(item,index) in items" :key="item.title">
+      <!-- <b v-if="!item.name || index==0">{{ item }}</b> -->
       <slot :item="item">
+
+        
         <NuxtLink
           :to="`/tags/${item.name}`"
           class="card flex flex-col hover:card-hover"

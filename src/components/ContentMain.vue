@@ -80,7 +80,7 @@ const tocItems = [
 
       <AlignTop />
 
-      <section class="tags flex flex-row items-center">
+      <!-- <section class="tags flex flex-row items-center">
         <h3 class="text-lg mr-2">标签</h3>
         <ul class="flex flex-row gap-2">
           <li v-for="item in tags" :key="item">
@@ -89,7 +89,7 @@ const tocItems = [
             </NuxtLink>
           </li>
         </ul>
-      </section>
+      </section> -->
 
       <!-- <section class="categories flex flex-row items-center">
         <h3 class="text-lg mr-2">栏目</h3>

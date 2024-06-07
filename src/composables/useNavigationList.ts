@@ -48,8 +48,11 @@ export const useNavigationList = async () => {
     return list.value.filter(
       (x) =>
         !x.$isDir &&
+        Array.isArray(x.tags) &&
         x.tags.some((d: string) =>
-          tags.some((tag) => tag.toLocaleLowerCase() == d.toLocaleLowerCase())
+          tags
+            // .filter((t) => t)
+            .some((tag) => tag?.toLocaleLowerCase() == d?.toLocaleLowerCase())
         )
     );
   };
@@ -58,6 +61,7 @@ export const useNavigationList = async () => {
     return list.value.filter(
       (x) =>
         !x.$isDir &&
+        Array.isArray(x.categories) &&
         x.categories.some((d: string) =>
           categories.some(
             (category) => category.toLocaleLowerCase() == d.toLocaleLowerCase()
