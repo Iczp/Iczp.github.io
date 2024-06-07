@@ -1,6 +1,6 @@
 ---
 name: 'csharp'
 title: 'C#'
-icon: 'mdi:languagecsharp'
+icon: 'mdi:language-csharp'
 description: 'C# '
 ---

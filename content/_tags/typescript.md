@@ -1,6 +1,6 @@
 ---
 name: 'typescript'
 title: 'Typescript'
-icon: 'vscodeicons:filetypetypescript'
+icon: 'vscode-icons:file-type-typescript'
 description: 'Typescript'
 ---

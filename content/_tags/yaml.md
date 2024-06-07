@@ -1,6 +1,6 @@
 ---
 name: 'yaml'
 title: 'YAML'
-icon: 'fileicons:yamlalt1'
+icon: 'file-icons:yaml-alt1'
 description: 'yaml'
 ---

@@ -1,6 +1,6 @@
 ---
 name: 'html'
 title: 'HTML'
-icon: 'materialsymbols:formath5'
+icon: 'material-symbols:format-h5'
 description: 'Html5'
 ---

@@ -1,6 +1,6 @@
 ---
 name: 'vscode'
 title: 'VScode'
-icon: 'logos:visualstudiocode'
+icon: 'logos:visual-studio-code'
 description: 'VScode'
 ---

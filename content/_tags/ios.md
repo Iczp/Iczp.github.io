@@ -1,6 +1,6 @@
 ---
 name: 'ios'
 title: 'iOS'
-icon: 'f7:logoios'
+icon: 'f7:logo-ios'
 description: 'android'
 ---

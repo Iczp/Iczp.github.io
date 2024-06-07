@@ -1,6 +1,6 @@
 ---
 name: 'nuxt'
 title: 'Nuxt'
-icon: 'logos:nuxticon'
+icon: 'logos:nuxt-icon'
 description: 'Nuxt'
 ---

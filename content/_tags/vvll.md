@@ -1,6 +1,6 @@
 ---
 name: 'vvll'
 title: 'vvll'
-icon: 'logos:waypointicon'
+icon: 'logos:waypoint-icon'
 description: 'vvll'
 ---

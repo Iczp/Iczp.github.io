@@ -1,6 +1,6 @@
 ---
 name: 'json'
 title: 'Json'
-icon: 'vscodeicons:filetypelightjson'
+icon: 'mdi:code-json'
 description: 'json'
 ---

@@ -1,7 +1,7 @@
 ---
 name: 'vue'
 title: 'Vue'
-icon: 'devicon:vuejs'
+icon: 'logos:vue'
 description: '#vue'
 ---
 

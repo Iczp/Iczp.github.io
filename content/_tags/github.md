@@ -1,6 +1,6 @@
 ---
 name: 'github'
 title: 'github'
-icon: 'carbon:logogithub'
+icon: 'carbon:logo-github'
 description: 'github'
 ---

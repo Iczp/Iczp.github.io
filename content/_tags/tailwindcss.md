@@ -1,6 +1,6 @@
 ---
 name: 'tailwindcss'
 title: 'tailwindcss'
-icon: 'logos:tailwindcssicon'
+icon: 'logos:tailwindcss-icon'
 description: 'tailwindcss'
 ---
