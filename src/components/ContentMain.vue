@@ -26,10 +26,10 @@ const { data } = await useAsyncData('detail', () =>
 
 const { items: tags, getInfo: getTag } = await useTags('tags');
 
-const { items: categories, getInfo: getCategory } = await useTags('tags');
+const { items: categories, getInfo: getCategory } = await useTags('categories');
 
-const tagItems = ref(formatTags(data.value?.tags));
-const categoryItems = ref(formatTags(data.value?.categories));
+// const tagItems = ref(formatTags(data.value?.tags));
+// const categoryItems = ref(formatTags(data.value?.categories));
 
 const tocItems = [
   {
@@ -83,15 +83,15 @@ const tocItems = [
       <section class="tags flex flex-row items-center">
         <h3 class="text-lg mr-2">标签</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="item in tagItems" :key="item">
-            <NuxtLink :to="`/tags/${getTag(item).name}`">
-              {{ getTag(item).title }}
+          <li v-for="item in tags" :key="item">
+            <NuxtLink :to="`/tags/${item.name}`">
+              {{ item.title }}
             </NuxtLink>
           </li>
         </ul>
       </section>
 
-      <section class="categories flex flex-row items-center">
+      <!-- <section class="categories flex flex-row items-center">
         <h3 class="text-lg mr-2">栏目</h3>
         <ul class="flex flex-row gap-2">
           <li v-for="item in categoryItems" :key="item">
@@ -100,7 +100,7 @@ const tocItems = [
             </NuxtLink>
           </li>
         </ul>
-      </section>
+      </section> -->
 
       <!-- <div class="categories flex flex-col gap-4"></div> -->
 

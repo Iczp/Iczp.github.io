@@ -2,9 +2,11 @@
 
 <template>
   <section class="logo-container flex-shrink-0">
-    <NuxtLink to="/">
-      <div class="logo"></div>
-      <div class="logo-content">
+    <NuxtLink to="/" class="flex flex-row items-center gap-4">
+      <div class="logo">
+        <Icon name="logos:waypoint-icon" class="size-10  -scale-y-100" /> 
+      </div>
+      <div class="flex flex-col">
         <h1 class="site-title"><strong class="light">VVLL</strong>.net</h1>
         <p class="site-description">
           <span><strong class="light">V</strong>ite</span>

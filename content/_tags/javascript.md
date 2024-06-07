@@ -1,6 +1,6 @@
 ---
 name: 'javascript'
 title: 'JS'
-icon: 'tabler:brand-javascript'
+icon: 'logos:javascript'
 description: '#javascript'
 ---

@@ -7,14 +7,14 @@ export type TagInfo = {
 };
 
 export const useTags = async (type: 'categories' | 'tags') => {
-  const { data } = await useAsyncData('categories', () =>
-    queryContent(`/notes/${type}`).findOne()
+  const { data } = await useAsyncData(`tag:${type}`, () =>
+    queryContent(`/notes/_${type}`).find()
   );
 
-  const { items } = data.value as { items?: TagInfo[] };
-
   const getInfo = (name: string) => {
-    const item = items?.find((x) => x.name.toLowerCase() === name.toLowerCase());
+    const item = data.value?.find(
+      (x) => x.name.toLowerCase() === name.toLowerCase()
+    );
     return (
       item || {
         name,
@@ -24,7 +24,7 @@ export const useTags = async (type: 'categories' | 'tags') => {
   };
 
   return {
-    items,
+    items: data.value,
     getInfo,
   };
 };
