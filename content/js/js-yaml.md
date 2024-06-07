@@ -3,7 +3,7 @@ title: 'Yaml与JSON互转 typescript'
 # description: '在 TypeScript（或 JavaScript）中，你可以使用第三方库如 `js-yaml` 来实现 YAML 和 JSON 之间的转换'
 navigation:
   icon: '🏡'
-tags: 'json ts yaml typescript'
+tags: 'json yaml typescript'
 categories: 'npm converter js-yaml'
 author: '[iczp](../html/nofollow.md)'
 date: '2024-06-01'

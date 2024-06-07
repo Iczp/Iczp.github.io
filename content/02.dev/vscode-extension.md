@@ -22,7 +22,9 @@ date: '2024-06-07'
 
 ### Iconify
 
-https://marketplace.visualstudio.com/items?itemName=antfu.iconify
+> :icon{name='line-md:iconify2' class='size-10'}
+>
+> https://marketplace.visualstudio.com/items?itemName=antfu.iconify
 
 - Inline display corresponding icons
 - Auto-completion for icon-sets
@@ -33,7 +35,9 @@ https://marketplace.visualstudio.com/items?itemName=antfu.iconify
 
 ## bradlc.vscode-tailwindcss
 
-https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+> :icon{name='skill-icons:windicss-dark' class='size-10'}
+>
+> https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
 
 ## Features
 
