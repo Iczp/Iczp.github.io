@@ -18,11 +18,14 @@ const {
 
 // console.log('content');
 
-const { data } = await useAsyncData('detail', () =>
-  queryContent(route.path).findOne()
-);
+const { data } = await useAsyncData('detail', () => {
 
+  if(!route.path.startsWith('/notes')) {
 
+    return undfined;
+  }
+  return queryContent(route.path).findOne();
+});
 
 const { items: tags, getInfo: getTag } = await useTags('tags');
 
@@ -49,7 +52,7 @@ const tocItems = [
       </UCard>
     </section>
 
-    <section class="flex flex-col flex-1">
+    <section v-if="data" class="flex flex-col flex-1">
       <!-- page:
       <pre>{{ data }}</pre> -->
       <!-- date: {{ data?.date }} tags: {{ tags }} categories:

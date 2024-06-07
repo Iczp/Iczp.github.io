@@ -14,6 +14,8 @@ const { integrity, api } = runtimeConfig.public.content;
 const { list, getAllByTags } = await useNavigationList();
 
 const items = ref(getAllByTags([params.id]));
+
+// const items = ref([]);
 </script>
 
 <template>

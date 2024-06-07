@@ -15,7 +15,7 @@ export const useTags = async (type: 'categories' | 'tags') => {
     queryContent('/notes/_tags').find()
   );
 
-  // const items = data.value?.items||[];
+  const items = data.value || [];
 
   const getInfo = (name: string) => {
     const item = data.value?.find(
@@ -30,7 +30,7 @@ export const useTags = async (type: 'categories' | 'tags') => {
   };
 
   return {
-    items: data.value,
+    items,
     getInfo,
   };
 };

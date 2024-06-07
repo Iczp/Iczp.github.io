@@ -4,7 +4,9 @@ const { data: navigation } = await useAsyncData('navigation', () =>
   fetchContentNavigation()
 );
 
-const { data } = await useAsyncData('tags:_tags', () => queryContent('/notes/_tags').find());
+const { data: tagData } = await useAsyncData('tags:_tags1', () =>
+  queryContent('/notes/_tags').find()
+);
 
 const depGroups = ref([
   {
@@ -16,13 +18,17 @@ const depGroups = ref([
     items: pkg.dependencies,
   },
 ]);
+// JSON.stringify(tagData);
 </script>
 
 <template>
   <main class="flex flex-col gap-4">
     <h1>About:Index</h1>
+
     navigation:
-    <pre>{{ data }}</pre>
+    <pre>{{ navigation.length }}</pre>
+    tagData : {{ typeof tagData }}==null: {{ tagData == null }} :
+    <pre>{{ tagData }}</pre>
 
     <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <li>
