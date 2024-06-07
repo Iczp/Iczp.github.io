@@ -11,7 +11,7 @@ const dir = navDirFromPath(
   route.fullPath.split('/').slice(0, 2).join('/'),
   navigation.value
 );
-console.log(route.path, dir);
+// console.log('dir',route.path, dir);
 
 const { items, toggleOpen } = useTrees({
   items: dir,

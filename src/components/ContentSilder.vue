@@ -7,7 +7,7 @@ defineShortcuts({
   meta_k: {
     usingInput: true,
     handler: () => {
-      console.log(isOpen.value);
+      // console.log(isOpen.value);
 
       isOpen.value = !isOpen.value;
     },

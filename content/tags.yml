@@ -32,20 +32,75 @@ items:
 
   - name: 'json'
     title: 'Json'
-    icon: 'logos:vueuse'
+    icon: 'vscode-icons:file-type-light-json'
     description: 'json'
 
   - name: 'ts'
     title: 'TS'
-    icon: 'logos:vueuse'
+    icon: 'vscode-icons:file-type-typescript'
     description: 'Typescript'
 
   - name: 'yaml'
     title: 'YAML'
-    icon: 'logos:vueuse'
+    icon: 'file-icons:yaml-alt1'
     description: 'yaml'
-    
+
   - name: 'typescript'
     title: 'Typescript'
-    icon: 'logos:vueuse'
+    icon: 'vscode-icons:file-type-typescript'
     description: 'Typescript'
+
+  - name: 'tailwindcss'
+    title: 'tailwindcss'
+    icon: 'logos:tailwindcss-icon'
+    description: 'tailwindcss'
+
+  - name: 'nuxt'
+    title: 'Nuxt'
+    icon: 'logos:nuxt-icon'
+    description: 'Nuxt'
+
+  - name: 'h5'
+    title: 'H5'
+    icon: 'material-symbols:format-h5'
+    description: 'Html5'
+
+  - name: 'uniapp'
+    title: 'Uniapp'
+    icon: 'mdi:unicode'
+    description: 'Uniapp'
+
+  - name: 'flutter'
+    title: 'Flutter'
+    icon: 'logos:flutter'
+    description: 'flutter'
+
+  - name: 'android'
+    title: 'Android'
+    icon: 'f7:logo-android'
+    description: 'android'
+
+  - name: 'ios'
+    title: 'iOS'
+    icon: 'f7:logo-ios'
+    description: 'android'
+
+  - name: 'github'
+    title: 'github'
+    icon: 'carbon:logo-github'
+    description: 'github'
+
+  - name: 'vvll'
+    title: 'vvll'
+    icon: 'logos:waypoint-icon'
+    description: 'vvll'
+
+  - name: 'vscode'
+    title: 'VScode'
+    icon: 'logos:visual-studio-code'
+    description: 'VScode'
+
+  - name: 'vs'
+    title: 'Visual Studio'
+    icon: 'logos:visual-studio'
+    description: 'VScode'

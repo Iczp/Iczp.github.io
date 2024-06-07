@@ -27,11 +27,11 @@ export const useAppNav = () => {
       url: '/tags',
       title: 'Tags',
     },
-    {
-      key: 'categories',
-      url: '/categories',
-      title: 'Categories',
-    },
+    // {
+    //   key: 'categories',
+    //   url: '/categories',
+    //   title: 'Categories',
+    // },
     {
       key: 'about',
       url: '/about',

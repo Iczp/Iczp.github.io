@@ -3,6 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .card {
+    @apply border border-slate-200 rounded-lg p-2 dark:border-slate-700 bg-slate-100 dark:bg-slate-800;
+  }
+  .card-hover {
+    @apply border-green-100 dark:border-green-700 bg-green-500 bg-opacity-20;
+  }
+}
+
 @layer base {
   html::selection {
   }

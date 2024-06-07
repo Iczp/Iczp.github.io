@@ -15,9 +15,9 @@ const depGroups = ref([
 
 <template>
   <main class="flex flex-col gap-4">
-    <h1>About:Index</h1>
+    <!-- <h1>About:Index</h1>
     navigation:
-    <pre>{{ navigation }}</pre>
+    <pre>{{ navigation }}</pre> -->
 
     <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <li>

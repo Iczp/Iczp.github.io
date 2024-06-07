@@ -103,7 +103,7 @@ export default defineNuxtConfig({
 
   content: {
     navigation: {
-      fields: ['author', 'date', 'tags', 'categories'],
+      fields: ['author', 'date', 'tags', 'categories', 'description', 'title'],
     },
     experimental: {
       // stripQueryParameters: true,

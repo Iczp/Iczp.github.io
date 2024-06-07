@@ -11,7 +11,7 @@ const handleMessage = () => {
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const toggleTheme = () => {
-  console.log(isDark.value);
+  console.log('toggleTheme', isDark.value);
 };
 </script>
 

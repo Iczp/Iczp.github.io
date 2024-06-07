@@ -14,34 +14,82 @@ const { integrity, api } = runtimeConfig.public.content;
 const { list, getAllByTags } = await useNavigationList();
 
 const items = ref(getAllByTags([params.id]));
-
 </script>
 
 <template>
-  <main>
-    <h1>params :{{ params }}</h1>
+  <div class="flex flex-row gap-4">
+    <aside class="flex flex-col w-48">
+      <!-- <TagNav /> -->
 
-    <ul
-      class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-    >
-      <li v-for="item in items" :key="item._path" class="">
-        <NuxtLink :to="`/tags/${item.name}`" class="card flex flex-col">
-          <h3 class="text-sm">
-            <span>{{ item.title }}</span>
-          </h3>
+      <TagList class="flex flex-col gap-2">
+        <template v-slot="{ item }">
+          <NuxtLink
+            :to="`/tags/${item.name}`"
+            class="flex flex-row justify-between items-center py-1"
+          >
+            <h3 class="flex flex-row items-center text-sm">
+              <Icon :name="item.icon" class="size-4" />
+              <span class="mx-2">{{ item.title }}</span>
+            </h3>
+            <div class="flex flex-row gap-1 items-center">
+              <span class="text-slate-400">{{ item.count }}</span>
+              <ArrowRight class="size-3" />
+            </div>
+          </NuxtLink>
+        </template>
+      </TagList>
+    </aside>
 
-          <p class="text-slate-600">{{ item }}</p>
-        </NuxtLink>
-      </li>
-    </ul>
-  </main>
+    <article class="flex flex-1 flex-col">
+      <header>params :{{ params }}</header>
+
+      <section>
+        <ul class="grid grid-cols-1 gap-4">
+          <li v-for="item in items" :key="item._path" class="">
+            <NuxtLink
+              :to="`${item._path}`"
+              class="card flex flex-col hover:card-hover p-4"
+            >
+              <div class="flex flex-row justify-between gap-4">
+                <aside
+                  class="size-24 rounded-md flex justify-center items-center border border-gray-500 border-opacity-20"
+                >
+                  imag
+                </aside>
+                <main class="flex flex-1 flex-col gap-1">
+                  <h3 class="flex flex-row justify-between items-center ">
+                    <div class="text-base">
+                      <span>{{ item.title }}</span>
+                    </div>
+                    <div class="flex flex-row items-center gap-2">
+                      <TagItem
+                        v-for="tag in item.tags"
+                        :value="tag"
+                        :key="tag"
+                        v-slot="{ tag: tagInfo }"
+                      >
+                        <Icon v-if="tagInfo.icon" :name="tagInfo.icon" class="size-4" ></Icon>
+                        <span v-else>{{ tagInfo.title }}</span>
+                      </TagItem>
+                    </div>
+                  </h3>
+                  <div class="text-sm text-gray-600">
+                    <p class="line-clamp-2 min-h-10">{{ item.description || item.title }}</p>
+                  </div>
+                  <div class="flex flex-row-reverse justify-between text-xs py-1">
+                    <div v-if="item.date" class="text-green-400">
+                      {{ item.date }}
+                    </div>
+                    <div v-if="item.author" class="text-sky-500">
+                      {{ item.author }}
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-.card {
-  @apply border border-slate-200 rounded-lg p-4 dark:border-slate-700 bg-slate-100 dark:bg-slate-800;
-}
-.card:hover {
-  @apply border-green-100 dark:border-green-700 bg-green-500 bg-opacity-20;
-}
-</style>
