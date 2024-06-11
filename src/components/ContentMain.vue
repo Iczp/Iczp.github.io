@@ -94,9 +94,9 @@ const tocItems = [
         <h3 class="mr-2">标签:</h3>
         <ul class="flex flex-row gap-2">
           <li v-for="(tag, index) in tags" :key="index">
-            <NuxtLink :to="`/tags?id=${tag}`">
+            <a :href="`/tags/${tag}`">
               {{ tag }}
-            </NuxtLink>
+            </a>
           </li>
         </ul>
       </section>
