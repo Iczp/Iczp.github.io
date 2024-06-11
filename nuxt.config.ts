@@ -233,9 +233,9 @@ export default defineNuxtConfig({
   //   ],
   // },
   routeRules: {
-    '/': { ssr: true, prerender: true },
-    '/links': { ssr: true, prerender: true },
-    '/about': { ssr: true, prerender: true },
+    '/': { ssr: true, prerender: false },
+    '/links': { ssr: true, prerender: false },
+    '/about': { ssr: true, prerender: false },
     '/notes': { ssr: true, prerender: true },
     '/tags': { ssr: true, prerender: false },
     '/tags/**': { ssr: true, prerender: false },
