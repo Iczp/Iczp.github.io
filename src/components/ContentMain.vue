@@ -60,8 +60,8 @@ const tocItems = [
     </section>
 
     <section v-if="article" class="flex flex-col flex-1">
-      page:
-      <pre>{{ article }}</pre>
+      <!-- page:
+      <pre>{{ article }}</pre> -->
       <!-- date: {{ data?.date }} tags: {{ tags }} categories:
           {{ categories }} -->
       <ContentDoc :excerpt="true">
@@ -90,7 +90,7 @@ const tocItems = [
 
       <AlignTop />
 
-      <!-- <section class="tags flex flex-row items-center">
+      <section class="tags flex flex-row items-center">
         <h3 class="mr-2">标签:</h3>
         <ul class="flex flex-row gap-2">
           <li v-for="(tag, index) in tags" :key="index">
@@ -99,7 +99,7 @@ const tocItems = [
             </NuxtLink>
           </li>
         </ul>
-      </section> -->
+      </section>
 
       <!-- <section class="categories flex flex-row items-center">
         <h3 class="text-lg mr-2">栏目</h3>

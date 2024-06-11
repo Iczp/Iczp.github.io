@@ -15,11 +15,37 @@ const { list, getAllByTags } = await useNavigationList();
 
 const items = ref(getAllByTags([params.id]));
 
+const key = `/notes/_tags/${params.id}`;
+
+const { data: tag } = await useAsyncData(key, () =>
+  queryContent(key).findOne()
+);
+
+const textRef = ref<HTMLDivElement | undefined>();
+
+const isShowAll = computed(() => {
+  if (textRef.value) {
+    const lineHeight = parseInt(
+      window.getComputedStyle(textRef.value).lineHeight
+    );
+    const maxHeight = lineHeight * 2; // Assuming 2 lines of text
+    return textRef.value.clientHeight >= maxHeight;
+  }
+  return false;
+});
+
+onMounted(() => {});
+
+const showFullText = () => {
+  // Show full text logic here
+  console.log('showFullText', isShowAll.value);
+};
+
 // const items = ref([]);
 </script>
 
 <template>
-  <div class="flex flex-row gap-4">
+  <div class="flex flex-row gap-4 mt-8">
     <aside class="flex flex-col w-48">
       <!-- <TagNav /> -->
 
@@ -42,8 +68,38 @@ const items = ref(getAllByTags([params.id]));
       </TagList>
     </aside>
 
-    <article class="flex flex-1 flex-col">
-      <header>params :{{ params }}</header>
+    <article class="flex flex-1 flex-col gap-4">
+      <!-- <header>tag :{{ tag }}</header> -->
+
+      <section v-if="tag">
+        <UCard :title="tag.title || params.id">
+          <template #header>
+            <div class="flex flex-col gap-2 ">
+              <h3>
+                <Icon :name="tag.icon" class="size-4 mr-2" />
+                <span>{{ tag.title || params.id }}</span>
+              </h3>
+              <p class="text-sm text-gray-600">{{ tag.description }}</p>
+            </div>
+          </template>
+          <div
+            ref="textRef"
+            class="relative prose dark:prose-dark"
+            :class="{ 'line-clamp-2': !isShowAll }"
+          >
+            <ContentRenderer :value="tag">
+              <!-- <h1>{{ tag.title }}</h1> -->
+              <ContentRendererMarkdown :value="tag" />
+              <a
+                v-if="isShowAll"
+                class="absolute bottom-0 right-0"
+                @click="showFullText"
+                >show more</a
+              >
+            </ContentRenderer>
+          </div>
+        </UCard>
+      </section>
 
       <section>
         <ul class="grid grid-cols-1 gap-4">
@@ -59,7 +115,7 @@ const items = ref(getAllByTags([params.id]));
                   imag
                 </aside>
                 <main class="flex flex-1 flex-col gap-1">
-                  <h3 class="flex flex-row justify-between items-center ">
+                  <h3 class="flex flex-row justify-between items-center">
                     <div class="text-base">
                       <span>{{ item.title }}</span>
                     </div>
@@ -70,15 +126,23 @@ const items = ref(getAllByTags([params.id]));
                         :key="tag"
                         v-slot="{ tag: tagInfo }"
                       >
-                        <Icon v-if="tagInfo.icon" :name="tagInfo.icon" class="size-4" ></Icon>
+                        <Icon
+                          v-if="tagInfo.icon"
+                          :name="tagInfo.icon"
+                          class="size-4"
+                        ></Icon>
                         <span v-else>{{ tagInfo.title }}</span>
                       </TagItem>
                     </div>
                   </h3>
                   <div class="text-sm text-gray-600">
-                    <p class="line-clamp-2 min-h-10">{{ item.description || item.title }}</p>
+                    <p class="line-clamp-2 min-h-10">
+                      {{ item.description || item.title }}
+                    </p>
                   </div>
-                  <div class="flex flex-row-reverse justify-between text-xs py-1">
+                  <div
+                    class="flex flex-row-reverse justify-between text-xs py-1"
+                  >
                     <div v-if="item.date" class="text-green-400">
                       {{ item.date }}
                     </div>
