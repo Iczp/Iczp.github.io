@@ -1,1 +1,0 @@
-import c from"./BLby7QrF.js";import m from"./BpqgVmRc.js";import{a7 as p,d as u,ao as l,ap as i,o,c as k,f as n,g as s}from"./L9yBva4P.js";const d=()=>p("color-mode").value,D=u({__name:"ThemeMode",setup(f){const e=l(),r=i(e);return d(),(g,t)=>{const a=c,_=m;return o(),k("button",{onClick:t[0]||(t[0]=x=>n(r)())},[n(e)?(o(),s(a,{key:0})):(o(),s(_,{key:1}))])}}});export{D as _};
