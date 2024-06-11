@@ -93,10 +93,13 @@ jobs:
     #     id: deployment
     #     uses: actions/deploy-pages@v4
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        ref: release
+    # - name: Checkout
+    #   uses: actions/checkout@v2
+    #   with:
+    #     ref: release
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v3
+      uses: actions/deploy-pages@v4
+      # with:
+      #   # 如果您的构建产物在dist目录中，请确保这里是正确的路径
+      #   publish_dir: ./dist
