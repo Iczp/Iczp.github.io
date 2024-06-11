@@ -2,7 +2,7 @@
 
 <template>
   <main>
-    <h1>Link:Index</h1>
+    <h1>Link:Index   LINKS</h1>
 
     <UAlert
       icon="i-heroicons-command-line"
