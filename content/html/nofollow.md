@@ -34,7 +34,7 @@ Content里index、noindex、follow、nofollow标签结合使用：
 **2、用于a标签**
 
 ```html
-<a href="https://www.iczp.net/" rel="nofollow">[这里是锚文本]</a>
+
 ```
 
 这段代码在超链接中加入nofollow属性，意思是告诉搜索引擎不要追踪这个链接。

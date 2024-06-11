@@ -2,7 +2,7 @@
 
 <template>
   <section class="logo-container flex-shrink-0">
-    <a to="/" class="flex flex-row items-center gap-4">
+    <a href="/" class="flex flex-row items-center gap-4">
       <div class="logo">
         <Icon name="logos:waypoint-icon" class="size-10  -scale-y-100" /> 
       </div>

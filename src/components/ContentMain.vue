@@ -27,14 +27,20 @@ const {
 //   return queryContent(route.path).findOne();
 // });
 
-const { items: tags, getInfo: getTag } = await useTags('tags');
+const article = await queryContent(route.path).findOne();
 
-const { items: categories, getInfo: getCategory } = await useTags('categories');
+const { items: tagItems, getInfo: getTag } = await useTags('tags');
+
+
+
+const tags = ref(formatTags(article?.tags));
+
+// const { items: categories, getInfo: getCategory } = await useTags('categories');
 
 // const tagItems = ref(formatTags(data.value?.tags));
 // const categoryItems = ref(formatTags(data.value?.categories));
 
-const article = await queryContent(route.path).findOne();
+
 const tocItems = [
   {
     text: 'Table of contents',
@@ -54,8 +60,8 @@ const tocItems = [
     </section>
 
     <section v-if="article" class="flex flex-col flex-1">
-      <!-- page:
-      <pre>{{ data }}</pre> -->
+      page:
+      <pre>{{ article }}</pre>
       <!-- date: {{ data?.date }} tags: {{ tags }} categories:
           {{ categories }} -->
       <ContentDoc :excerpt="true">
@@ -85,11 +91,11 @@ const tocItems = [
       <AlignTop />
 
       <!-- <section class="tags flex flex-row items-center">
-        <h3 class="text-lg mr-2">标签</h3>
+        <h3 class="mr-2">标签:</h3>
         <ul class="flex flex-row gap-2">
-          <li v-for="item in tags" :key="item">
-            <NuxtLink :to="`/tags/${item.name}`">
-              {{ item.title }}
+          <li v-for="(tag, index) in tags" :key="index">
+            <NuxtLink :to="`/tags?id=${tag}`">
+              {{ tag }}
             </NuxtLink>
           </li>
         </ul>
