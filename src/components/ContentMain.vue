@@ -18,14 +18,14 @@ const {
 
 // console.log('content');
 
-const { data } = await useAsyncData('detail', () => {
+// const { data } = await useAsyncData('detail', () => {
 
-  if(!route.path.startsWith('/notes')) {
+//   if(!route.path.startsWith('/notes')) {
 
-    return undfined;
-  }
-  return queryContent(route.path).findOne();
-});
+//     return undefined;
+//   }
+//   return queryContent(route.path).findOne();
+// });
 
 const { items: tags, getInfo: getTag } = await useTags('tags');
 
@@ -34,10 +34,11 @@ const { items: categories, getInfo: getCategory } = await useTags('categories');
 // const tagItems = ref(formatTags(data.value?.tags));
 // const categoryItems = ref(formatTags(data.value?.categories));
 
+const article = await queryContent(route.path).findOne();
 const tocItems = [
   {
     text: 'Table of contents',
-    children: data.value?.body?.toc?.links,
+    children: article?.body?.toc?.links,
   },
 ];
 </script>
@@ -52,7 +53,7 @@ const tocItems = [
       </UCard>
     </section>
 
-    <section v-if="data" class="flex flex-col flex-1">
+    <section v-if="article" class="flex flex-col flex-1">
       <!-- page:
       <pre>{{ data }}</pre> -->
       <!-- date: {{ data?.date }} tags: {{ tags }} categories:
@@ -61,7 +62,7 @@ const tocItems = [
         <template v-slot="{ doc, excerpt }">
           <pre>
 
-            date: {{ data?.date }} 
+            date: {{ article?.date }} 
             <!-- tags: {{ tags }} 
             categories:
           {{ categories }} -->

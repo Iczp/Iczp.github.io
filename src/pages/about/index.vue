@@ -1,12 +1,16 @@
 <script lang="ts" setup>
 const pkg = usePkg();
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation()
-);
+// const { data: navigation } = await useAsyncData('navigation', () =>
+//   fetchContentNavigation()
+// );
 
-const { data: tagData } = await useAsyncData('tags:_tags1', () =>
-  queryContent('/notes/_tags').find()
-);
+const navigation = await fetchContentNavigation();
+
+// const { data: tagData } = await useAsyncData('tags:_tags1', () =>
+//   queryContent('/notes/_tags').find()
+// );
+
+const tagData = queryContent('/notes/_tags').find();
 
 const depGroups = ref([
   {

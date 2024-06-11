@@ -7,8 +7,8 @@
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         <template v-slot="{ item }">
-          <NuxtLink
-            :to="`/tags/${item.name}`"
+          <a
+            :href="`/tags/${item.name}`"
             class="card flex flex-col hover:card-hover p-4"
           >
             <h3 class="flex flex-row items-center text-lg">
@@ -17,7 +17,7 @@
               <span class="text-slate-400">({{ item.count }})</span>
             </h3>
             <p class="text-slate-600">{{ item.description }}</p>
-          </NuxtLink>
+          </a>
         </template>
       </TagList>
     </div>

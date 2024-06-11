@@ -11,14 +11,16 @@ export const useTags = async (type: 'categories' | 'tags') => {
   //   queryContent(`/notes/_${type}`).findOne()
   // );
 
-  const { data } = await useAsyncData('tags:_tags', () =>
-    queryContent('/notes/_tags').find()
-  );
+  // const { data } = await useAsyncData('tags:_tags', () =>
+  //   queryContent('/notes/_tags').find()
+  // );
 
-  const items = data.value || [];
+  // const items = data.value || [];
+
+  const items = await  queryContent('/notes/_tags').find()
 
   const getInfo = (name: string) => {
-    const item = data.value?.find(
+    const item = items?.find(
       (x: any) => x.name.toLowerCase() === name.toLowerCase()
     );
     return (
@@ -28,6 +30,8 @@ export const useTags = async (type: 'categories' | 'tags') => {
       }
     );
   };
+
+
 
   return {
     items,

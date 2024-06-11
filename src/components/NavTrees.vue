@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
+// const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
+
+const navigation = await fetchContentNavigation()
 
 const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
   useContentHelpers();
@@ -9,7 +11,7 @@ const { navBottomLink, navDirFromPath, navPageFromPath, navKeyFromPath } =
 //one of ['/docs', '/notes']
 const dir = navDirFromPath(
   route.fullPath.split('/').slice(0, 2).join('/'),
-  navigation.value
+  navigation
 );
 // console.log('dir',route.path, dir);
 
@@ -55,8 +57,8 @@ const navClick = (item: any) => {
             <File v-else />
           </div>
           <p class="truncate">
-            <NuxtLink
-              :to="navToLink(item)"
+            <a
+              :href="navToLink(item)"
               @click="navClick(item)"
               class="cursor-pointer"
             >
@@ -65,7 +67,7 @@ const navClick = (item: any) => {
               <template v-if="item.$isDir">
                 ({{ item.$totalFileCount }})
               </template>
-            </NuxtLink>
+            </a>
           </p>
         </section>
         <section v-if="item.$isDir">

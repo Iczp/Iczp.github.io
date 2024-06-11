@@ -25,8 +25,8 @@ const items = ref(getAllByTags([params.id]));
 
       <TagList class="flex flex-col gap-2">
         <template v-slot="{ item }">
-          <NuxtLink
-            :to="`/tags/${item.name}`"
+          <a
+            :href="`/tags/${item.name}`"
             class="flex flex-row justify-between items-center py-1"
           >
             <h3 class="flex flex-row items-center text-sm">
@@ -37,7 +37,7 @@ const items = ref(getAllByTags([params.id]));
               <span class="text-slate-400">{{ item.count }}</span>
               <ArrowRight class="size-3" />
             </div>
-          </NuxtLink>
+          </a>
         </template>
       </TagList>
     </aside>

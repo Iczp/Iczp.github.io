@@ -4,6 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   devtools: { enabled: true },
   typescript: {
     // typeCheck: true,
@@ -66,7 +67,7 @@ export default defineNuxtConfig({
     },
   },
   experimental: {
-    payloadExtraction: true, // 取消生成 _payload.js
+    payloadExtraction: false, // 取消生成 _payload.js
   },
   hooks: {
     'build:done': async () => {
@@ -129,7 +130,7 @@ export default defineNuxtConfig({
     // documentDriven: true,
     documentDriven: {
       page: true, // Keep page fetching enabled
-      surround: true, // Disable surround fetching
+      surround: false, // Disable surround fetching
     },
     markdown: {
       toc: {
@@ -231,4 +232,12 @@ export default defineNuxtConfig({
   //     'page:transition:finish',
   //   ],
   // },
+  routeRules: {
+    '/': { ssr: true, prerender: false },
+    '/links': { ssr: true, prerender: false },
+    '/about': { ssr: true, prerender: false },
+    '/notes': { ssr: true, prerender: true },
+    '/tags': { ssr: true, prerender: false },
+    '/tags/**': { ssr: true, prerender: false },
+  },
 });

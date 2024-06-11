@@ -2,7 +2,7 @@
 
 <template>
   <section class="logo-container flex-shrink-0">
-    <NuxtLink to="/" class="flex flex-row items-center gap-4">
+    <a to="/" class="flex flex-row items-center gap-4">
       <div class="logo">
         <Icon name="logos:waypoint-icon" class="size-10  -scale-y-100" /> 
       </div>
@@ -16,7 +16,7 @@
           <span class="hidden"> (链接实验室)</span>
         </p>
       </div>
-    </NuxtLink>
+    </a>
   </section>
 </template>
 

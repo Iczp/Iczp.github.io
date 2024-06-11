@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Icon } from '#components'
+// import { Icon } from '#components'
 const { items: list } = await useTags('tags');
 
 const { getAllByTags } = await useNavigationList();
@@ -21,8 +21,8 @@ const items = list.map((x) => ({
       <slot :item="item">
 
         
-        <NuxtLink
-          :to="`/tags/${item.name}`"
+        <a
+          :href="`/tags/${item.name}`"
           class="card flex flex-col hover:card-hover"
         >
           <h3 class="flex flex-row items-center text-lg">
@@ -31,7 +31,7 @@ const items = list.map((x) => ({
             <span class="text-slate-400">({{ item.count }})</span>
           </h3>
           <p class="text-slate-600">{{ item.description }}</p>
-        </NuxtLink>
+        </a>
       </slot>
     </li>
   </ul>
