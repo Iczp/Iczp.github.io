@@ -1,0 +1,1 @@
+import{u as m}from"./Cst5nkcj.js";import{d as p,h as c,s as u,y as _,f}from"./L9yBva4P.js";const h=p({__name:"TagItem",props:{value:{}},async setup(s){let t,e;const a=s,{items:i,getInfo:o}=([t,e]=c(()=>m()),t=await t,e(),t),n=u(()=>o(a.value));return(r,l)=>_(r.$slots,"default",{tag:f(n)})}});export{h as _};

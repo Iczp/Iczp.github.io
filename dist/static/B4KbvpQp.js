@@ -1,0 +1,1 @@
+import p from"./D_-kZbVa.js";import n from"./DNq2MK31.js";import{d as t,o as e,g as o}from"./L9yBva4P.js";const c=t({__name:"Dir",props:{open:{type:[Boolean,null],default:!1}},setup(a){return(r,s)=>r.open?(e(),o(n,{key:0})):(e(),o(p,{key:1}))}});export{c as _};

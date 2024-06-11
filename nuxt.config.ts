@@ -93,7 +93,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     // '@nuxtjs/robots',
     '@vueuse/nuxt',
-    '@pinia/nuxt',
+    // '@pinia/nuxt',
     '@ant-design-vue/nuxt',
     'nuxt-icon',
     '@nuxt/content',

@@ -1,0 +1,1 @@
+import{q as n}from"./L9yBva4P.js";const c=async s=>{const t=await n("/notes/_tags").find();return{items:t,getInfo:e=>(t==null?void 0:t.find(o=>o.name.toLowerCase()===e.toLowerCase()))||{name:e,title:e}}};export{c as u};
