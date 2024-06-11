@@ -9,6 +9,7 @@
     "dev": "nuxt dev",
     "generate": "npm run clean && nuxt generate",
     "preview": "nuxt preview",
+    "deploy": "gh-pages -d dist --repo https://github.com/Iczp/Iczp.github.io.git",
     "postinstall": "nuxt prepare",
     "clean": "rimraf dist .output",
     "clean-cache": "rimraf dist .output node_modules/.cache/nuxt"
@@ -35,6 +36,7 @@
     "@types/fs-extra": "^11.0.4",
     "autoprefixer": "^10.4.19",
     "fs-extra": "^11.2.0",
+    "gh-pages": "^6.1.1",
     "nuxt-icon": "^0.6.10",
     "postcss": "^8.4.38",
     "rimraf": "^5.0.7",

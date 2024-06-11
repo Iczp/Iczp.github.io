@@ -4,6 +4,11 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  router: {
+    // base: '/',
+    // base: '/nuxt-antd/',
+  },
+
   ssr: true,
   devtools: { enabled: true },
   typescript: {
