@@ -1,1 +1,0 @@
-import{_ as e}from"./DlAUqK2U.js";import{o as t,c as n}from"./DdxGICcc.js";const s={name:"Hangfire"},o={class:"items-center text-sm leading-5 text-center text-white align-middle rounded select-none size-5 bg-sky-900"};function r(c,a,i,_,d,m){return t(),n("span",o,"H")}const l=e(s,[["render",r]]);export{l as default};

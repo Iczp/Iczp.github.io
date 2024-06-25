@@ -1,0 +1,1 @@
+import t from"./GdPY6TOy.js";import{e as p,r as s,o as a,i}from"./DVvsI1PC.js";const f=p({__name:"Share",props:{fill:{type:Boolean}},setup(n){return s(n.fill),(o,e)=>{const r=t;return a(),i(r,{name:o.fill?"ic:round-share":"ic:outline-share",onClick:e[0]||(e[0]=m=>o.$emit("change"))},null,8,["name"])}}});export{f as _};

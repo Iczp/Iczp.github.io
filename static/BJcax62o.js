@@ -1,0 +1,1 @@
+import n from"./GdPY6TOy.js";import{_ as c}from"./DlAUqK2U.js";import{o as t,i as e}from"./DVvsI1PC.js";import"./BQkc-AXV.js";const r={name:"MinioIcon"};function s(i,_,m,p,a,f){const o=n;return t(),e(o,{name:"simple-icons:minio",color:"#c72c48",class:"font-bold"})}const $=c(r,[["render",s]]);export{$ as default};

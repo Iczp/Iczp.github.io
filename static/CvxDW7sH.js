@@ -1,1 +1,0 @@
-import{_ as e}from"./DlAUqK2U.js";import{o as t,c as s}from"./DdxGICcc.js";const n={name:"Quartz"},o={class:"items-center text-sm leading-5 text-center text-white align-middle rounded select-none size-5 bg-sky-400"};function r(c,a,i,_,d,m){return t(),s("span",o,"Q")}const f=e(n,[["render",r]]);export{f as default};

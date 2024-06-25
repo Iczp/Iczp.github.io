@@ -1,0 +1,1 @@
+import a from"./GdPY6TOy.js";import{e as s,A as l,o as r,i as m,f as p}from"./DVvsI1PC.js";const u=s({__name:"Folder",props:{open:{type:[Boolean,null],default:!1}},setup(o){const e=o,n=l(()=>e.open?"material-symbols-light:folder-open":"material-symbols-light:folder");return(c,_)=>{const t=a;return r(),m(t,{name:p(n)},null,8,["name"])}}});export{u as _};
