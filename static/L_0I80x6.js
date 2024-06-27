@@ -1,0 +1,1 @@
+import{e as a,r,ad as o,o as n,c,h as f,a3 as l,f as p}from"./nDBdg7i6.js";const _=["target"],h=a({__name:"ProseA",setup(u){const e=r(""),t=o().href;return t!=null&&t.startsWith("http")&&(e.value="_blank"),(s,d)=>(n(),c("a",l({target:p(e)},s.$attrs),[f(s.$slots,"default")],16,_))}});export{h as default};

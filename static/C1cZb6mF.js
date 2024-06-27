@@ -1,1 +1,0 @@
-import{c as o,t as a,P as r,o as t}from"./DVvsI1PC.js";import{_ as n}from"./DlAUqK2U.js";const s={};function c(e,m){return t(),o("h1",null,"Name:"+a((e._.provides[r]||e.$route).params.name),1)}const p=n(s,[["render",c]]);export{p as default};

@@ -1,0 +1,1 @@
+import{_ as o}from"./BdaAv7EV.js";import{e as a,h as n,a as r,w as s,d,t as i,g as m}from"./nDBdg7i6.js";const c=a({__name:"Author",props:{id:{},name:{}},setup(p){return(e,_)=>{const t=o;return e.id?n(e.$slots,"default",{key:0,date:e.id},()=>[r(t,{to:`/authors/${e.id}`},{default:s(()=>[d(i(e.name||e.id),1)]),_:1},8,["to"])]):m("",!0)}}});export{c as _};

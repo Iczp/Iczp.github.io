@@ -1,1 +1,0 @@
-import{_ as t}from"./DlAUqK2U.js";import{o,c as r,g as s}from"./DVvsI1PC.js";const c={},a={class:"p-1 alert"};function n(e,_){return o(),r("div",a,[s(e.$slots,"default",{},void 0,!0)])}const f=t(c,[["render",n],["__scopeId","data-v-89917848"]]);export{f as default};

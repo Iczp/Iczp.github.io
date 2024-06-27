@@ -1,1 +1,0 @@
-import{_ as o}from"./B-ALKTWZ.js";import{e as a,g as n,a as r,w as s,d,t as i,h as m}from"./DVvsI1PC.js";const c=a({__name:"Author",props:{id:{},name:{}},setup(p){return(e,_)=>{const t=o;return e.id?n(e.$slots,"default",{key:0,date:e.id},()=>[r(t,{to:`/authors/${e.id}`},{default:s(()=>[d(i(e.name||e.id),1)]),_:1},8,["to"])]):m("",!0)}}});export{c as _};

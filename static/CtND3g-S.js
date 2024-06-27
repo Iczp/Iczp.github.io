@@ -1,1 +1,0 @@
-import{_ as r}from"./DlAUqK2U.js";import{o as t,c as o,g as s,d as a}from"./DVvsI1PC.js";const d={},c={class:"flex items-center justify-center border border-dashed rounded-md dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-slate-100"};function n(e,_){return t(),o("div",c,[s(e.$slots,"default",{},()=>[a("没有数据！")])])}const m=r(d,[["render",n]]);export{m as default};

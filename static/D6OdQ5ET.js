@@ -1,0 +1,1 @@
+import{_ as t}from"./BdaAv7EV.js";import{_ as o}from"./DlAUqK2U.js";import{c as n,a,w as c,F as _,b as r,o as s,d}from"./nDBdg7i6.js";const m={},u=r("h1",null,"Index",-1);function f(i,l){const e=t;return s(),n(_,null,[u,a(e,{to:"about"},{default:c(()=>[d("About")]),_:1})],64)}const N=o(m,[["render",f]]);export{N as default};
