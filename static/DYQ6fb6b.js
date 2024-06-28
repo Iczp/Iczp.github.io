@@ -1,0 +1,1 @@
+import{Z as e}from"./BotNLUr-.js";const i=e("site",{state:()=>({location:[],isOpen:!1}),actions:{setPaths(s){this.location=s},close(){this.isOpen=!1},open(){this.isOpen=!0},toggle(){return this.isOpen=!this.isOpen,this.isOpen}}});export{i as u};

@@ -1,0 +1,1 @@
+import t from"./BMjMnJU9.js";import{e as p,r as a,o as s,i}from"./BotNLUr-.js";import"./BQkc-AXV.js";import"./DlAUqK2U.js";const d=p({__name:"Star",props:{fill:{type:Boolean}},setup(e){return a(e.fill),(o,n)=>{const r=t;return s(),i(r,{name:o.fill?"ic:round-star":"ic:round-star-border",onClick:n[0]||(n[0]=l=>o.$emit("change"))},null,8,["name"])}}});export{d as default};

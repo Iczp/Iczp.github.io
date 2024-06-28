@@ -1,1 +1,0 @@
-import{$ as e}from"./nDBdg7i6.js";const i=e("site",{state:()=>({location:[],isOpen:!1}),actions:{setPaths(s){this.location=s},close(){this.isOpen=!1},open(){this.isOpen=!0},toggle(){this.isOpen=!this.isOpen}}});export{i as u};
